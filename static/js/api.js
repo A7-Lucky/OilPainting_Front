@@ -55,6 +55,46 @@ function handleLogout() {
 }
 
 
+//index.html ------------------------------------------------------------------------->
+// 아티클 리스트 보여주기 //
+async function getArticleList() {
+    const response = await fetch(`${backend_base_url}/articles`, {
+        method: 'GET',
+    })
+    response_json = await response.json()
+    return response_json
+}
+
+
+// 아티클 디테일 페이지 연결 //
+function ArticleDetail(article_id) {
+    const url = `${frontend_base_url}/article_detail.html?id=${article_id}`;
+    location.href = url;
+}
+
+
+// 아티클 작성하기 //
+async function loadCreateArticle(title, content, image){
+    const formdata = new FormData();
+
+    formdata.append('title', title)
+    formdata.append('content', content)
+    formdata.append('image', image)
+
+    const response = await fetch(`${backend_base_url}/articles/`, {
+        headers: {
+            Authorization: "Bearer " + localStorage.getItem("access"),
+        },
+        method: 'POST',
+        body: formdata
+    })
+    if (response.status == 200){
+        alert("글 작성 완료!")
+        window.location.replace(`${frontend_base_url}/index.html`)
+    }
+}
+
+
 //article_detail.html ------------------------------------------------------------------------->
 // 아티클 디테일 //
 async function GetArticle(article_id) {
@@ -80,7 +120,7 @@ async function GetComment(article_id) {
 
 
 // 댓글 작성하기 //
-async function CreateComment(comment) {
+async function loadCreateComment(comment) {
     const response = await fetch(
         `${backend_base_url}/articles/${article_id}/comment/`,
         {

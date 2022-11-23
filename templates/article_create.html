@@ -18,9 +18,9 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../static/css/article_detail.css" />
+    <link rel="stylesheet" href="../static/css/article_create.css" />
 
-    <title>油畵(유화) | 아티클 상세 페이지</title>
+    <title>油畵(유화) | 아티클 작성하기</title>
 </head>
 
 <body>
@@ -40,43 +40,26 @@
                 </ul>
             </div>
         </nav>
-        <div class="article_area">
-            <div class="article_box">
-                <h1 id="title"></h1>
-                <hr />
-                <p id="user"></p>
-                <p id="image"></p>
-                <p id="content"></p>
-                <hr />
-                <p id="likes"></p>
-                <p id="bookmarks"></p>
-                <p id="created_at"></p>
-                <hr />
+
+        <div class="input_area">
+            <h1>Create Article</h1>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="title" placeholder="title" required />
+                <label for="floatingInput">title</label>
             </div>
-            <div class="comment_box">
-                <h5>댓글</h5>
-                <div id="update_box" class="update_box"></div>
-                <div class="comment_input">
-                    <div class="comment_small_box">
-                        <div>
-                            <ol id="comment"></ol>
-                        </div>
-                        <div class="comment_button">
-                            <div id="update_button" class="update_button"></div>
-                            <div id="delete_button" class="delete_button"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <input id="comment-input" type="text" placeholder="댓글을 입력해주세요!">
-                        <button type="button" onclick="loadCreateComment()">등록</button>
-                    </div>
-                </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="content" placeholder="content" required />
+                <label for="floatingInput">content</label>
             </div>
+            <div class="file_select">
+                <input type="file" class="form-control" id="image" placeholder="image" required />
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="CreateArticle()">작성하기</button>
         </div>
     </div>
 
     <script src="../static/js/api.js"></script>
-    <script src="../static/js/article_detail.js"></script>
-
+    <script src="../static/js/article_create.js"></script>
 </body>
+
 </html>

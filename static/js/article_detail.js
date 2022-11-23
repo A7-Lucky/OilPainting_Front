@@ -7,7 +7,12 @@ async function loadArticle(article_id) {
 
     const title = document.getElementById("title");
     const user = document.getElementById("user");
+
     const image = document.getElementById("image");
+    let articleImage = document.createElement("img")
+    articleImage.src = `${backend_base_url}${article.image}`
+    image.appendChild(articleImage)
+
     const content = document.getElementById("content");
     const likes = document.getElementById("likes");
     const bookmarks = document.getElementById("bookmarks");
@@ -15,7 +20,7 @@ async function loadArticle(article_id) {
 
     title.innerText = article.title;
     user.innerText = article.user;
-    image.innerText = article.image;
+    // image.innerText = article.image;
     content.innerText = article.content;
     likes.innerText = "❤️" + article.likes;
     bookmarks.innerText = "🔖" + article.bookmarks;
@@ -60,9 +65,9 @@ loadGetComment(article_id);
 
 
 // 댓글 작성하기 //
-function loadCreateComment() {
+function CreateComment() {
     const comment = document.getElementById("comment-input").value
-    CreateComment(comment)
+    loadCreateComment(comment)
 }
 
 
