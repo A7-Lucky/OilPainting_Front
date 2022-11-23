@@ -17,15 +17,17 @@ function parseJwt(token) {
   return JSON.parse(jsonPayload);
 }
 
-async function loadMyProfile() {
-  const profile = await getMyProfile();
+window.onload = async function loadMyProfile() {
+  profile = await getMyProfile();
 
   const profile_img = document.getElementById("profile_img");
   const username = document.getElementById("username");
   const bio = document.getElementById("bio");
 
-  profile_img.innerText = profile.profile_img;
+  let image = document.createElement("img");
+  image.src = `${backend_base_url}${profile.profile_img}`;
+  profile_img.appendChild(image);
+
   username.innerText = profile.username;
   bio.innerText = profile.bio;
-}
-loadMyProfile();
+};

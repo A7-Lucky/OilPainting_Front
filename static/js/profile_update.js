@@ -17,8 +17,24 @@ function parseJwt(token) {
   return JSON.parse(jsonPayload);
 }
 
+window.onload = async function loadMyProfile() {
+  profile = await getMyProfile();
+
+  const profile_update_img = document.getElementById("profile_update_img");
+
+  let image = document.createElement("img");
+  image.src = `${backend_base_url}${profile.profile_img}`;
+  profile_update_img.appendChild(image);
+};
+
 async function loadMyProfileUpdate() {
-  const profile_img = document.getElementById("profile_img").value;
+  const profile_img = document.getElementById("profile_img").files[0];
   const bio = document.getElementById("bio").value;
-  updateMyProfile(profile_img, bio);
+
+  const formdata = new FormData();
+
+  formdata.append("profile_img", profile_img);
+  formdata.append("bio", bio);
+
+  updateMyProfile(formdata);
 }

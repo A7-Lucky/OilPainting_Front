@@ -183,25 +183,18 @@ async function getMyProfile() {
 }
 
 // 프로필 수정하기
-async function updateMyProfile(profile_img, bio) {
+async function updateMyProfile(formdata) {
   const response = await fetch(`${backend_base_url}/users/profile/`, {
     headers: {
-      "content-type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("access"),
     },
     method: "PUT",
-    body: JSON.stringify({
-      profile_img: profile_img,
-      bio: bio,
-    }),
+    body: formdata,
   });
-  response_json = await response.json();
-  console.log(response_json);
 
   if (response.status == 200) {
-    window.location.replace(
-      `${frontend_base_url}/profile.html`
-    );
+    alert("프로필 변경 완료!");
+    window.location.replace(`${frontend_base_url}/profile.html`);
   } else {
     alert(response.status);
   }
