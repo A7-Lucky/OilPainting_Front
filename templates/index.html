@@ -23,9 +23,9 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="stylesheet" href="../static/css/index.css" />
-
     <title>油畵(유화) | Home</title>
+
+    <link rel="stylesheet" href="../static/css/index.css" />
   </head>
 
   <body>
@@ -36,10 +36,22 @@
       <div class="space">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">My</a>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="location.href='profile.html'"
+            >
+              프로필
+            </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="handleLogout()"
+            >
+              로그아웃
+            </button>
           </li>
         </ul>
       </div>
@@ -47,5 +59,12 @@
 
     <script src="../static/js/api.js"></script>
     <script src="../static/js/index.js"></script>
+
+    <script>
+      // 인증된 유저만 페이지 접근 가능 //
+      if (!token) {
+        window.location.replace(`${frontend_base_url}/login.html`);
+      }
+    </script>
   </body>
 </html>

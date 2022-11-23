@@ -1,3 +1,9 @@
+body {
+  height: 100vh;
+  display: grid;
+  background-color: whitesmoke;
+}
+
 nav.navbar {
   width: 100%;
   justify-content: space-between;
@@ -11,15 +17,6 @@ a.navbar-brand {
 
 div.space {
   display: flex;
-}
-
-input.form-control {
-  width: 500px;
-}
-
-.material-symbols-outlined {
-  font-size: 30px;
-  margin: 10px;
 }
 
 .nav-item {

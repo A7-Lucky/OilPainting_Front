@@ -25,7 +25,7 @@
 
     <title>油畵(유화) | Profile</title>
 
-    <link rel="stylesheet" href="../static/css/profile.css" />
+    <link rel="stylesheet" href="../static/css/profile_update.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -65,23 +65,37 @@
       </div>
 
       <div>
-        <p id="username">username</p>
-        <p id="profile_img">profile_img</p>
-        <p id="bio">bio</p>
+        <div>
+          <p>프로필 사진</p>
+          <input type="text" class="form-control" id="profile_img" />
+        </div>
+        <div>
+          <p>자기소개</p>
+          <input type="text" class="form-control" id="bio" />
+        </div>
       </div>
+
       <div>
         <button
           type="button"
           class="btn btn-primary"
-          onclick="location.href='profile_update.html'"
+          id="updatebtn"
+          onclick="loadMyProfileUpdate()"
         >
-          프로필 수정
+          확인
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="location.href='profile.html'"
+        >
+          취소
         </button>
       </div>
     </form>
 
     <script src="../static/js/api.js"></script>
-    <script src="../static/js/profile.js"></script>
+    <script src="../static/js/profile_update.js"></script>
 
     <script>
       // 인증된 유저만 페이지 접근 가능 //

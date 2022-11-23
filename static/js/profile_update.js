@@ -1,4 +1,4 @@
-console.log("index 로딩 완료")
+console.log("profile_update 로딩 완료");
 
 // 로그인한 사용자 액세스 정보 추적 //
 function parseJwt(token) {
@@ -15,4 +15,10 @@ function parseJwt(token) {
   );
 
   return JSON.parse(jsonPayload);
+}
+
+async function loadMyProfileUpdate() {
+  const profile_img = document.getElementById("profile_img").value;
+  const bio = document.getElementById("bio").value;
+  updateMyProfile(profile_img, bio);
 }
