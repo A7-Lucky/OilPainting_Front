@@ -65,3 +65,29 @@ function loadCreateComment() {
     CreateComment(comment)
 }
 
+
+// 댓글 수정하기 //
+async function UpdateComment(comment_id) {
+    const update_review_list = document.getElementById("update_box");
+
+    const input_comment = document.createElement("textarea");
+    input_comment.setAttribute("id", "input_comment");
+    input_comment.innerText = "댓글을 수정해 주세요!";
+    update_review_list.appendChild(input_comment);
+
+    const update_comment_button = document.createElement("button");
+    update_comment_button.innerText = "수정";
+    update_comment_button.setAttribute("id", comment_id);
+    update_comment_button.setAttribute(
+        "onclick",
+        "loadUpdateComment(this.id)"
+    );
+    update_review_list.appendChild(update_comment_button);
+}
+
+
+// 댓글 삭제하기 //
+async function DeleteComment(article_id) {
+    await loadDeleteComment(article_id);
+}
+

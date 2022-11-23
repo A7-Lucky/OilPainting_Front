@@ -55,14 +55,21 @@
             </div>
             <div class="comment_box">
                 <h5>댓글</h5>
+                <div id="update_box" class="update_box"></div>
                 <div class="comment_input">
-                    <div>
-                        <ol id="comment"></ol>
+                    <div class="comment_small_box">
+                        <div>
+                            <ol id="comment"></ol>
+                        </div>
+                        <div class="comment_button">
+                            <div id="update_button" class="update_button"></div>
+                            <div id="delete_button" class="delete_button"></div>
+                        </div>
                     </div>
-                    <div id="update_button" class="update_button"></div>
-                    <div id="delete_button" class="delete_button"></div>
-                    <input id="comment-input" type="text" placeholder="댓글을 입력해주세요!">
-                    <button type="button" onclick="loadCreateComment()">등록</button>
+                    <div>
+                        <input id="comment-input" type="text" placeholder="댓글을 입력해주세요!">
+                        <button type="button" onclick="loadCreateComment()">등록</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,5 +79,4 @@
     <script src="../static/js/article_detail.js"></script>
 
 </body>
-
 </html>

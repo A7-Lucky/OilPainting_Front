@@ -107,3 +107,56 @@ async function CreateComment(comment) {
         alert(response.status);
     }
 }
+
+
+// 댓글 수정하기 //
+async function loadUpdateComment(comment_id) {
+    const input_comment = document.getElementById("input_comment").value;
+
+    const response = await fetch(
+        `${backend_base_url}/articles/${article_id}/comment/${comment_id}/`,
+        {
+            headers: {
+                "content-type": "application/json",
+                Authorization: "Bearer " + localStorage.getItem("access"),
+            },
+            method: "PUT",
+            body: JSON.stringify({
+                article: article_id,
+                comment: input_comment,
+            }),
+        }
+    );
+    response_json = await response.json();
+    console.log(response_json);
+
+    if (response.status == 200) {
+        window.location.replace(
+            `${frontend_base_url}/article_detail.html?id=${article_id}`
+        );
+    } else {
+        alert(response.status);
+    }
+}
+
+// 댓글 삭제하기 //
+async function loadDeleteComment(comment_id) {
+    const response = await fetch(
+        `${backend_base_url}/articles/${article_id}/comment/${comment_id}/`,
+        {
+            headers: {
+                "content-type": "application/json",
+                Authorization: "Bearer " + localStorage.getItem("access"),
+            },
+            method: "DELETE",
+        }
+    );
+
+    if (response.status == 204) {
+        window.location.replace(
+            `${frontend_base_url}/article_detail.html?id=${article_id}`
+        );
+    } else {
+        alert(response.status);
+    }
+}
