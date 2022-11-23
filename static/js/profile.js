@@ -1,4 +1,4 @@
-console.log("index 로딩 완료")
+console.log("profile 로딩 완료")
 
 // // 로그인한 사용자 액세스 정보 추적 //
 // function parseJwt(token) {
