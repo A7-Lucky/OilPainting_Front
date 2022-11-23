@@ -1,0 +1,28 @@
+nav.navbar {
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+}
+
+a.navbar-brand {
+    margin: 0 20px;
+    font-size: 30px;
+}
+
+div.space {
+    display: flex;
+}
+
+input.form-control {
+    width: 500px;
+}
+
+.material-symbols-outlined {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.nav-item {
+    margin-right: 50px;
+    font-size: 20px;
+}
