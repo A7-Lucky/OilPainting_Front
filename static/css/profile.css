@@ -1,8 +1,8 @@
 body {
-    height: 100vh;
-    display: grid;
-    background-color: whitesmoke;
-  }
+  height: 100vh;
+  display: grid;
+  background-color: whitesmoke;
+}
 
 nav.navbar {
   width: 100%;
@@ -25,6 +25,39 @@ li.nav-item {
 }
 
 form {
-    margin: 250px auto;
-    text-align: center;
-  }
+  margin: 250px auto;
+  text-align: center;
+  width: 1395px;
+}
+
+div.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+div.main_profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 25px;
+}
+
+img {
+  margin: 20px;
+}
+
+ol {
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+  margin: auto 25px;
+  width: 150px;
+  display: inline-block;
+  word-break: break-all;
+}

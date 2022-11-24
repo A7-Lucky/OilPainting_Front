@@ -1,6 +1,9 @@
 console.log("api 로딩 완료");
 
 // 전역 변수
+// EC2 인스턴스 연결 시
+// const backend_base_url = "http://13.209.72.148";
+// 백엔드 서버 연결 시
 const backend_base_url = "http://127.0.0.1:8000";
 const frontend_base_url = "http://127.0.0.1:5500/templates";
 
@@ -198,4 +201,16 @@ async function updateMyProfile(formdata) {
   } else {
     alert(response.status);
   }
+}
+
+// 아티클 가져오기
+async function getMyArticle() {
+  const response = await fetch(`${backend_base_url}/articles/myarticle/`, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("access"),
+    },
+    method: "GET",
+  });
+  response_json = await response.json();
+  return response_json;
 }

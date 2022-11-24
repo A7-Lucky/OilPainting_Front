@@ -57,21 +57,24 @@
     </nav>
 
     <form>
-      <div>
+      <div class="main">
         <p id="profile_img"></p>
-        <p id="username"></p>
-        <p id="bio"></p>
+        <div class="main_profile">
+          <p class="h3" id="username"></p>
+          <p id="bio"></p>
+          <div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="location.href='profile_update.html'"
+            >
+              프로필 수정
+            </button>
+          </div>
+        </div>
       </div>
       <br />
-      <div>
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="location.href='profile_update.html'"
-        >
-          프로필 수정
-        </button>
-      </div>
+      <ol class="article_list" id="article_list"></ol>
     </form>
 
     <script src="../static/js/api.js"></script>
