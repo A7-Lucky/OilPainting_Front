@@ -4,14 +4,14 @@ console.log("api 로딩 완료");
 const backend_base_url = "http://127.0.0.1:8000";
 const frontend_base_url = "http://127.0.0.1:5500/templates";
 
-var token = localStorage.getItem("access");
+const token = localStorage.getItem("access");
 
 // 로그인
 async function handleLogin() {
   // 아이디 정규식 (4~12자의 영문 대소문자와 숫자)
-  var userCheck = RegExp(/^[a-zA-Z0-9]{4,12}$/);
+  let userCheck = RegExp(/^[a-zA-Z0-9]{4,12}$/);
   // 패스워드 정규식 (영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자)
-  var passwdCheck = RegExp(
+  let passwdCheck = RegExp(
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/
   );
 
@@ -82,9 +82,9 @@ async function handleLogin() {
 // 회원가입
 async function handleSignup() {
   // 아이디 정규식 (4~12자의 영문 대소문자와 숫자)
-  var userCheck = RegExp(/^[a-zA-Z0-9]{4,12}$/);
+  let userCheck = RegExp(/^[a-zA-Z0-9]{4,12}$/);
   // 패스워드 정규식 (영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자)
-  var passwdCheck = RegExp(
+  let passwdCheck = RegExp(
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/
   );
 

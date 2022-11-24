@@ -17,6 +17,7 @@ function parseJwt(token) {
   return JSON.parse(jsonPayload);
 }
 
+// 기존 프로필 이미지 보여주기
 window.onload = async function loadMyProfile() {
   profile = await getMyProfile();
 
@@ -27,6 +28,7 @@ window.onload = async function loadMyProfile() {
   profile_update_img.appendChild(image);
 };
 
+// 프로필 수정
 async function loadMyProfileUpdate() {
   const profile_img = document.getElementById("profile_img").files[0];
   const bio = document.getElementById("bio").value;
