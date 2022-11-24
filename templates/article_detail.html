@@ -20,8 +20,8 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&family=Caveat:wght@600&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../static/css/article_detail.css" />
 
@@ -38,13 +38,13 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-floating mb-3">
-                            <input type="text" id="modal_comment">
+                        <div class="input-group mb-3">
+                            <input type="text" id="modal_comment" class="form-control" placeholder="Update Comment" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="save_button">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                        <button type="button" class="btn btn-success" id="save_button">수정</button>
                     </div>
                 </div>
             </div>
@@ -70,29 +70,37 @@
                 <hr />
                 <p id="user"></p>
                 <p id="image"></p>
+                <hr />
                 <p id="content"></p>
                 <hr />
-                <p id="likes"></p>
-                <p id="bookmarks"></p>
+                <div class="likes_bookmarks">
+                    <p id="likes" class="likes"></p>
+                    <p id="bookmarks" class="bookmarks"></p>
+                </div>
                 <p id="created_at"></p>
                 <hr />
             </div>
             <div class="comment_box">
-                <h5>댓글</h5>
-                <div id="update_box" class="update_box"></div>
-                <div class="comment_input">
-                    <div class="comment_small_box">
-                        <div>
-                            <ol id="comment"></ol>
+                <h3>COMMENT</h3>
+                <div>
+                    <div id="update_box" class="update_box"></div>
+                    <div class="comment_input">
+                        <div class="comment_small_box">
+                            <div>
+                                <ul id="comment"></ul>
+                            </div>
+                            <div class="comment_button">
+                                <div id="update_button" class="update_button"></div>
+                                <div id="delete_button" class="delete_button"></div>
+                            </div>
                         </div>
-                        <div class="comment_button">
-                            <div id="update_button" class="update_button"></div>
-                            <div id="delete_button" class="delete_button"></div>
+                        <div class="comment_input_box">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="comment-input" placeholder="댓글을 입력해주세요!" required />
+                                <label for="floatingInput">댓글을 입력해주세요!</label>
+                            </div>
+                            <button type="button" class="btn btn-secondary comment_input_button" onclick="CreateComment()">등록</button>
                         </div>
-                    </div>
-                    <div>
-                        <input id="comment-input" type="text" placeholder="댓글을 입력해주세요!">
-                        <button type="button" class="btn btn-secondary" onclick="CreateComment()">등록</button>
                     </div>
                 </div>
             </div>

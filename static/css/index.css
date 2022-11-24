@@ -1,5 +1,5 @@
 body {
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Jua', sans-serif;
 }
 
 nav.navbar {
@@ -53,5 +53,11 @@ img {
     display: flex;
     flex-direction: row;
     font-size: 20px;
+}
+
+.create_article {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;;
 }
 

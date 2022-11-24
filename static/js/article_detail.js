@@ -42,6 +42,7 @@ async function loadGetComment(article_id) {
         newComment.innerText = comment.user + comment.comment + comment.created_at;
         comment_list.appendChild(newComment);
 
+
         const update_comment_button = document.createElement("button");
         const delete_comment_button = document.createElement("button");
 
@@ -49,10 +50,12 @@ async function loadGetComment(article_id) {
         delete_comment_button.innerText = "삭제";
 
         update_comment_button.setAttribute("id", comment.id);
+        update_comment_button.setAttribute("class", "btn btn-success create_button")
         update_comment_button.setAttribute("data-bs-toggle", "modal");
         update_comment_button.setAttribute("data-bs-target", "#exampleModal");
 
         delete_comment_button.setAttribute("id", comment.id);
+        delete_comment_button.setAttribute("class", "btn btn-danger create_button");
         update_comment_button.setAttribute(
             "onclick",
             "UpdateComment(this.id)"
