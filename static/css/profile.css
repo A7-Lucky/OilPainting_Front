@@ -20,8 +20,8 @@ div.space {
 }
 
 li.nav-item {
-  margin-right: 20px;
-  font-size: 20px;
+  width: 100px;
+  margin: 0;
 }
 
 form {

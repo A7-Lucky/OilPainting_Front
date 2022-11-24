@@ -1,8 +1,8 @@
 body {
-    height: 100vh;
-    display: grid;
-    background-color: whitesmoke;
-  }
+  height: 100vh;
+  display: grid;
+  background-color: whitesmoke;
+}
 
 nav.navbar {
   width: 100%;
@@ -20,11 +20,11 @@ div.space {
 }
 
 li.nav-item {
-  margin-right: 20px;
-  font-size: 20px;
+  width: 100px;
+  margin: 0;
 }
 
 form {
-    margin: 150px auto;
-    text-align: center;
-  }
+  margin: 150px auto;
+  text-align: center;
+}
