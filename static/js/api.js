@@ -74,7 +74,7 @@ function ArticleDetail(article_id) {
 
 
 // 아티클 작성하기 //
-async function loadCreateArticle(title, content, image){
+async function loadCreateArticle(title, content, image) {
     const formdata = new FormData();
 
     formdata.append('title', title)
@@ -88,7 +88,7 @@ async function loadCreateArticle(title, content, image){
         method: 'POST',
         body: formdata
     })
-    if (response.status == 200){
+    if (response.status == 200) {
         alert("글 작성 완료!")
         window.location.replace(`${frontend_base_url}/index.html`)
     }
@@ -200,3 +200,23 @@ async function loadDeleteComment(comment_id) {
         alert(response.status);
     }
 }
+
+
+// 유저 정보 가져오기 --------------------------------------------------------------------------->
+// 로그인한 유저 가져오기 //
+async function getName() {
+    const response = await fetch(`${backend_base_url}/users/profile`, {
+        headers: {
+            Authorization: "Bearer " + localStorage.getItem("access"),
+        },
+        method: "GET",
+    });
+
+    if (response.status == 200) {
+        response_json = await response.json();
+        return response_json;
+    } else {
+        return null;
+    }
+}
+

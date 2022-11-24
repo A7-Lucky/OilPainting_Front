@@ -1,3 +1,12 @@
+// 유저 정보 가져오기 //
+async function checkLogin(){
+    const name = await getName();
+    
+    const username = document.getElementById("username")
+    username.innerText = name.username + " 님 환영합니다!"
+}
+checkLogin()
+
 window.onload = async function loadArticleList(){
     articles = await getArticleList()
     const article_user = document.getElementById("article_user")

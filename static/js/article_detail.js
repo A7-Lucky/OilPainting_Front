@@ -20,7 +20,6 @@ async function loadArticle(article_id) {
 
     title.innerText = article.title;
     user.innerText = article.user;
-    // image.innerText = article.image;
     content.innerText = article.content;
     likes.innerText = "❤️" + article.likes;
     bookmarks.innerText = "🔖" + article.bookmarks;
@@ -32,6 +31,7 @@ loadArticle(article_id);
 // 댓글 리스트 보여주기 //
 async function loadGetComment(article_id) {
     comments = await GetComment(article_id);
+    const user = await getName();
     const comment_list = document.getElementById("comment");
     const update_button_list = document.getElementById("update_button");
     const delete_button_list = document.getElementById("delete_button");
@@ -63,7 +63,12 @@ async function loadGetComment(article_id) {
         );
         update_button_list.appendChild(update_comment_button);
         delete_button_list.appendChild(delete_comment_button);
-    });
+
+        if(user.username != comment.user) {
+            update_comment_button.style.visibility ="hidden"
+            delete_comment_button.style.visibility ="hidden"
+        }
+        });
 }
 loadGetComment(article_id);
 
@@ -90,5 +95,4 @@ async function UpdateComment(comment_id) {
 // 댓글 삭제하기 //
 async function DeleteComment(article_id) {
     await loadDeleteComment(article_id);
-}
-
+};
