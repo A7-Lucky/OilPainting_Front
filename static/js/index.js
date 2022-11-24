@@ -1,15 +1,34 @@
 window.onload = async function loadArticleList(){
     articles = await getArticleList()
-    const article_list = document.getElementById("articles")
+    const article_user = document.getElementById("article_user")
+    const article_img = document.getElementById("article_img")
+    const article_title = document.getElementById("article_title")
+    const article_content = document.getElementById("article_content")
+    const article_likes_bookmarks = document.getElementById("article_likes_bookmarks")
 
     articles.forEach(article => {
-        const newArticle = document.createElement("div")
-        const articleImage = document.createElement("img")
-        articleImage.setAttribute("src", `${backend_base_url}${article.image}`)
-        newArticle.setAttribute("id", article.id)
-        newArticle.innerText = article.user + article.title + article.content + article.likes + article.bookmarks
-        newArticle.setAttribute("onclick", "ArticleDetail(this.id)")
-        newArticle.appendChild(articleImage)
-        article_list.appendChild(newArticle)
+        const newuser = document.createElement("ol")
+        const newimage = document.createElement("img")
+        const newtitle = document.createElement("ol")
+        const newcontent = document.createElement("ol")
+        const newlikesbookmarks = document.createElement("ol")
+
+        newimage.setAttribute("src", `${backend_base_url}${article.image}`)
+        newtitle.setAttribute("id", article.id)
+        newimage.setAttribute("id", article.id)
+
+        newuser.innerText = article.user
+        newtitle.innerText = article.title
+        newcontent.innerText = article.content
+        newlikesbookmarks.innerText = article.ikes + article.bookmarks
+
+        newtitle.setAttribute("onclick", "ArticleDetail(this.id)")
+        newimage.setAttribute("onclick", "ArticleDetail(this.id)")
+
+        article_user.appendChild(newuser)
+        article_img.appendChild(newimage)
+        article_title.appendChild(newtitle)
+        article_content.appendChild(newcontent)
+        article_likes_bookmarks.appendChild(newlikesbookmarks)
     });
 }

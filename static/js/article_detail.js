@@ -47,7 +47,11 @@ async function loadGetComment(article_id) {
 
         update_comment_button.innerText = "수정";
         delete_comment_button.innerText = "삭제";
+
         update_comment_button.setAttribute("id", comment.id);
+        update_comment_button.setAttribute("data-bs-toggle", "modal");
+        update_comment_button.setAttribute("data-bs-target", "#exampleModal");
+
         delete_comment_button.setAttribute("id", comment.id);
         update_comment_button.setAttribute(
             "onclick",
@@ -73,21 +77,13 @@ function CreateComment() {
 
 // 댓글 수정하기 //
 async function UpdateComment(comment_id) {
-    const update_review_list = document.getElementById("update_box");
+    const save_button = document.getElementById("save_button")
 
-    const input_comment = document.createElement("textarea");
-    input_comment.setAttribute("id", "input_comment");
-    input_comment.innerText = "댓글을 수정해 주세요!";
-    update_review_list.appendChild(input_comment);
-
-    const update_comment_button = document.createElement("button");
-    update_comment_button.innerText = "수정";
-    update_comment_button.setAttribute("id", comment_id);
-    update_comment_button.setAttribute(
+    save_button.setAttribute("id", comment_id)
+    save_button.setAttribute(
         "onclick",
         "loadUpdateComment(this.id)"
     );
-    update_review_list.appendChild(update_comment_button);
 }
 
 

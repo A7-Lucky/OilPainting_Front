@@ -18,6 +18,10 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../static/css/index.css" />
 
     <title>油畵(유화) | Home</title>
@@ -43,7 +47,13 @@
     <div class="article_area">
         <h1>HOME</h1>
         <button type="button" id="article_create" class="btn btn-secondary" onclick="location.href='article_create.html'">작성하기</button>
-        <ol id="articles"></ol>
+        <div class="article_box">
+            <ol id="article_user" class="article_user"></ol>
+            <ol id="article_img" class="article_img"></ol>
+            <ol id="article_title" class="article_title"></ol>
+            <ol id="article_content" class="article_content"></ol>
+            <ol id="article_likes_bookmarks" class="article_likes_bookmarks"></ol>
+        </div>
     </div>
 
     <script src="../static/js/api.js"></script>

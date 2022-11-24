@@ -1,3 +1,7 @@
+body {
+    font-family: 'Baloo 2', cursive;
+}
+
 nav.navbar {
     width: 100%;
     justify-content: space-between;
@@ -32,3 +36,22 @@ input.form-control {
     align-items: center;
     margin-top: 50px;
 }
+
+button {
+    margin: 20px;    
+}
+
+ol {
+    margin-right: 200px;
+}
+
+img {
+    margin-right: 10px;
+}
+
+.article_user, .article_img, .article_title, .article_content, .article_likes_bookmarks {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+

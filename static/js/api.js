@@ -151,7 +151,7 @@ async function loadCreateComment(comment) {
 
 // 댓글 수정하기 //
 async function loadUpdateComment(comment_id) {
-    const input_comment = document.getElementById("input_comment").value;
+    const input_comment = document.getElementById("modal_comment").value;
 
     const response = await fetch(
         `${backend_base_url}/articles/${article_id}/comment/${comment_id}/`,
