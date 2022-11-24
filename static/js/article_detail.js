@@ -32,15 +32,23 @@ loadArticle(article_id);
 async function loadGetComment(article_id) {
     comments = await GetComment(article_id);
     const user = await getName();
+    const username_list = document.getElementById("username");
     const comment_list = document.getElementById("comment");
+    const created_at_list = document.getElementById("comment_created_at");
     const update_button_list = document.getElementById("update_button");
     const delete_button_list = document.getElementById("delete_button");
 
     comments.forEach((comment) => {
+        const newUsername = document.createElement("li");
         const newComment = document.createElement("li");
-        newComment.setAttribute("id", comment.id);
-        newComment.innerText = comment.user + comment.comment + comment.created_at;
+        const newCreatedat = document.createElement("li");
+        newUsername.setAttribute("id", comment.id);
+        newUsername.innerText = comment.user
+        newComment.innerText = comment.comment
+        newCreatedat.innerText = comment.created_at
+        username_list.appendChild(newUsername);
         comment_list.appendChild(newComment);
+        created_at_list.appendChild(newCreatedat);
 
 
         const update_comment_button = document.createElement("button");
