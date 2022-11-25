@@ -42,7 +42,7 @@ button {
 }
 
 ol {
-    margin-right: 200px;
+    margin: 30px 50px;
 }
 
 img {
@@ -54,15 +54,28 @@ img {
     flex-direction: row;
 }
 
-.article_user, .article_img, .article_title, .article_content, .article_likes_bookmarks {
+.article_list {
     display: flex;
     flex-direction: row;
-    font-size: 20px;
 }
 
 .create_article {
     width: 200px;
     height: 50px;
     font-size: 20px;;
+}
+
+.modal_content {
+    height: 100px;
+}
+
+.article_modal {
+    display: flex;
+}
+
+.article_modal_small {
+    display: flex;
+    align-items: center;
+    width: 800px;
 }
 

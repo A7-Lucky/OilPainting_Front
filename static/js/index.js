@@ -21,24 +21,20 @@ async function checkLogin(){
     const name = await getName();
     
     const username = document.getElementById("username")
-    username.innerText = name.username + " 님 환영합니다!"
+    username.innerText = name.email + " 님 환영합니다!"
 }
 checkLogin()
 
+
+// 아티클 리스트 가져오기 (임시) //
 window.onload = async function loadArticleList(){
     articles = await getArticleList()
-    const article_user = document.getElementById("article_user")
-    const article_img = document.getElementById("article_img")
-    const article_title = document.getElementById("article_title")
-    const article_content = document.getElementById("article_content")
-    const article_likes_bookmarks = document.getElementById("article_likes_bookmarks")
+    const article_list = document.getElementById("article_list")
 
     articles.forEach(article => {
         const newuser = document.createElement("ol")
         const newimage = document.createElement("img")
         const newtitle = document.createElement("ol")
-        const newcontent = document.createElement("ol")
-        const newlikesbookmarks = document.createElement("ol")
 
         newimage.setAttribute("src", `${backend_base_url}${article.image}`)
         newtitle.setAttribute("id", article.id)
@@ -46,16 +42,21 @@ window.onload = async function loadArticleList(){
 
         newuser.innerText = article.user
         newtitle.innerText = article.title
-        newcontent.innerText = article.content
-        newlikesbookmarks.innerText = article.ikes + article.bookmarks
 
         newtitle.setAttribute("onclick", "ArticleDetail(this.id)")
         newimage.setAttribute("onclick", "ArticleDetail(this.id)")
 
-        article_user.appendChild(newuser)
-        article_img.appendChild(newimage)
-        article_title.appendChild(newtitle)
-        article_content.appendChild(newcontent)
-        article_likes_bookmarks.appendChild(newlikesbookmarks)
+        article_list.appendChild(newimage)
+        article_list.appendChild(newuser)
+        article_list.appendChild(newtitle)
     });
+}
+
+
+// 아티클 생성 (임시) //
+async function CreateArticle() {
+    const title = document.getElementById("title").value
+    const content = document.getElementById("content").value
+    const image = document.getElementById("image").files[0]
+    loadCreateArticle(title, content, image)
 }

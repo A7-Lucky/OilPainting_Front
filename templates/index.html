@@ -29,6 +29,30 @@
 </head>
 
 <body>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog article_modal article_modal">
+            <div class="modal-content article_modal_small">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">아티클을 작성해주세요!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="title" placeholder="title" required />
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control modal_content" id="content" placeholder="content" required />
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="image" placeholder="image" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="CreateArticle()">작성하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="space">
             <a class="navbar-brand" href="../templates/index.html">油畵(유화)</a>
@@ -50,16 +74,11 @@
 
     <div class="article_area">
         <h1>유화 제작하기</h1>
-        <button type="button" id="article_create" class="btn btn-secondary create_article"
-            onclick="location.href='article_create.html'">작성하기</button>
+        <button type="button" id="article_create" class="btn btn-secondary create_article" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            작성하기
+        </button>
         <div class="article_box">
-            <div>
-                <ol id="article_user" class="article_user"></ol>
-                <ol id="article_title" class="article_title"></ol>
-                <ol id="article_content" class="article_content"></ol>
-                <ol id="article_likes_bookmarks" class="article_likes_bookmarks"></ol>
-            </div>
-            <ol id="article_img" class="article_img"></ol>
+            <ol id="article_list" class="article_list"></ol>
         </div>
     </div>
 
@@ -69,9 +88,9 @@
     <script>
         // 인증된 유저만 페이지 접근 가능 //
         if (!token) {
-          window.location.replace(`${frontend_base_url}/login.html`);
+            window.location.replace(`${frontend_base_url}/login.html`);
         }
-      </script>
+    </script>
 </body>
 
 </html>
