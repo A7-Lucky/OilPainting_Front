@@ -11,24 +11,24 @@ const token = localStorage.getItem("access");
 
 // 로그인
 async function handleLogin() {
-  // 아이디 정규식 (4~12자의 영문 대소문자와 숫자)
-  let userCheck = RegExp(/^[a-zA-Z0-9]{4,12}$/);
+  // 이메일 정규식
+  let userCheck = RegExp(/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/);
   // 패스워드 정규식 (영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자)
   let passwdCheck = RegExp(
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/
   );
 
-  let username = document.querySelector("#username");
+  let email = document.querySelector("#email");
   let password = document.querySelector("#password");
 
-  // 아이디 공백 및 유효성 검사
-  if (username.value == "") {
-    alert("아이디를 입력해주세요!");
-    username.focus();
+  // 이메일 공백 및 유효성 검사
+  if (email.value == "") {
+    alert("이메일 주소를 입력해주세요!");
+    email.focus();
     return false;
-  } else if (!userCheck.test(username.value)) {
-    alert("아이디는 4~12자의 영문 대소문자와 숫자로만 입력해주세요!");
-    username.focus();
+  } else if (!userCheck.test(email.value)) {
+    alert("이메일 주소 형식이 잘못되었습니다");
+    email.focus();
     return false;
   }
 
@@ -46,7 +46,7 @@ async function handleLogin() {
   }
 
   const loginData = {
-    username: document.getElementById("username").value,
+    email: document.getElementById("email").value,
     password: document.getElementById("password").value,
   };
   const response = await fetch(`${backend_base_url}/users/api/token/`, {
@@ -84,25 +84,25 @@ async function handleLogin() {
 
 // 회원가입
 async function handleSignup() {
-  // 아이디 정규식 (4~12자의 영문 대소문자와 숫자)
-  let userCheck = RegExp(/^[a-zA-Z0-9]{4,12}$/);
+  // 이메일 정규식
+  let userCheck = RegExp(/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/);
   // 패스워드 정규식 (영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자)
   let passwdCheck = RegExp(
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/
   );
 
-  let username = document.querySelector("#username");
+  let email = document.querySelector("#email");
   let password = document.querySelector("#password");
   let password2 = document.querySelector("#password2");
 
-  // 아이디 유효성 검사
-  if (username.value == "") {
-    alert("아이디를 입력해주세요!");
-    username.focus();
+  // 이메일 유효성 검사
+  if (email.value == "") {
+    alert("이메일 주소를 입력해 주세요!");
+    email.focus();
     return false;
-  } else if (!userCheck.test(username.value)) {
-    alert("아이디는 4~12자의 영문 대소문자와 숫자로만 입력해주세요!");
-    username.focus();
+  } else if (!userCheck.test(email.value)) {
+    alert("이메일 주소 형식이 잘못되었습니다!");
+    email.focus();
     return false;
   }
 
@@ -132,15 +132,15 @@ async function handleSignup() {
     password2.focus();
     return false;
   }
-  // 아이디 비밀번호 값 중복 검증
-  else if (username.value == password.value) {
-    alert("아이디와 비밀번호는 같을 수 없습니다!");
+  // 이메일 비밀번호 값 중복 검증
+  else if (email.value == password.value) {
+    alert("이메일 주소와 비밀번호는 같을 수 없습니다!");
     password.focus();
     return false;
   }
 
   const signupData = {
-    username: document.getElementById("username").value,
+    email: document.getElementById("email").value,
     password: document.getElementById("password").value,
   };
 

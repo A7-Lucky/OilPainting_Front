@@ -22,14 +22,14 @@ window.onload = async function loadMyProfile() {
   profile = await getMyProfile();
 
   const profile_img = document.getElementById("profile_img");
-  const username = document.getElementById("username");
+  const email = document.getElementById("email");
   const bio = document.getElementById("bio");
 
   let image = document.createElement("img");
   image.src = `${backend_base_url}${profile.profile_img}`;
   profile_img.appendChild(image);
 
-  username.innerText = profile.username;
+  email.innerText = profile.email;
   bio.innerText = profile.bio;
 };
 
@@ -41,16 +41,19 @@ async function loadMyArticle() {
   articles.forEach((article) => {
     const newImage = document.createElement("img");
     newImage.setAttribute("id", article.id);
+    newImage.setAttribute("class", "article_img");
     newImage.src = `${backend_base_url}${article.image}`;
     article_list.appendChild(newImage);
 
     const newTitle = document.createElement("li");
     newTitle.setAttribute("id", article.id);
+    newTitle.setAttribute("class", "article_title");
     newTitle.innerText = "제목\n\n" + article.title;
     article_list.appendChild(newTitle);
 
     const newContent = document.createElement("li");
     newContent.setAttribute("id", article.id);
+    newContent.setAttribute("class", "article_content");
     newContent.innerText = "내용\n\n" + article.content;
     article_list.appendChild(newContent);
   });

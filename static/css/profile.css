@@ -1,5 +1,4 @@
 body {
-  height: 100vh;
   display: grid;
   background-color: whitesmoke;
 }
@@ -15,25 +14,21 @@ a.navbar-brand {
   font-size: 30px;
 }
 
-div.space {
-  display: flex;
-}
-
-li.nav-item {
-  width: 100px;
-  margin: 0;
+button.btn.btn-primary{
+  margin-right: 20px;
 }
 
 form {
-  margin: 250px auto;
+  margin: 80px auto;
   text-align: center;
   width: 1395px;
 }
 
 div.main {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  width: auto;
+  margin: 50px auto;
 }
 
 div.main_profile {
@@ -43,8 +38,17 @@ div.main_profile {
   margin-left: 25px;
 }
 
+p.profile_img {
+  margin: 0;
+}
+
 img {
   margin: 20px;
+}
+
+img.article_img {
+  width: 256px;
+  height: 256px;
 }
 
 ol {
@@ -57,7 +61,12 @@ ol {
 li {
   list-style: none;
   margin: auto 25px;
-  width: 150px;
-  display: inline-block;
-  word-break: break-all;
+}
+
+li.article_title {
+  width: 100px;
+}
+
+li.article_content {
+  width: 200px;
 }

@@ -15,11 +15,6 @@ a.navbar-brand {
   font-size: 30px;
 }
 
-div.space {
-  display: flex;
-}
-
-.nav-item {
+button.btn.btn-primary {
   margin-right: 20px;
-  font-size: 20px;
 }
