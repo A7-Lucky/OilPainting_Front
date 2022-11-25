@@ -106,6 +106,16 @@ async function GetArticle(article_id) {
 }
 
 
+// 아티클 유저 프로필 가져오기 //
+async function GetProfile(article_id) {
+    const response = await fetch(`${backend_base_url}/articles/${article_id}/user/`, {
+        method: "GET",
+    });
+    response_json = await response.json();
+    return response_json;
+}
+
+
 // 댓글 리스트 가져오기 //
 async function GetComment(article_id) {
     const response = await fetch(

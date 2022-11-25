@@ -46,6 +46,19 @@ async function loadArticle(article_id) {
 loadArticle(article_id);
 
 
+// 아티클 유저 프로필 보여주기 //
+async function loadGetProfile(article_id) {
+    user = await GetProfile(article_id);
+
+    const profile = document.getElementById("profile_img");
+    let profileImage = document.createElement("img")
+    profileImage.src = `${backend_base_url}${user.profile_img}`
+    profileImage.setAttribute("class", "profile_img")
+    profile.appendChild(profileImage)
+}
+loadGetProfile(article_id)
+
+
 // 댓글 리스트 보여주기 //
 async function loadGetComment(article_id) {
     comments = await GetComment(article_id);
@@ -64,6 +77,7 @@ async function loadGetComment(article_id) {
         newUser.innerText = comment.user
         newComment.innerText = comment.comment
         newCreatedat.innerText = comment.created_at
+        user_list.appendChild(newUser);
         comment_list.appendChild(newComment);
         created_at_list.appendChild(newCreatedat);
 
