@@ -219,10 +219,10 @@ async function updatePassword(formdata) {
     body: formdata,
   });
 
-  if (old_password.value == new_password.value) {
-    alert("현재 비밀번호와 새 비밀번호는 같을 수 없습니다!");
-  } else if (!passwdCheck.test(new_password.value)) {
+  if (!passwdCheck.test(new_password.value)) {
     alert("새 비밀번호는 영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자로 입력해주세요!");
+  } else if (old_password.value == new_password.value) {
+    alert("현재 비밀번호와 새 비밀번호는 같을 수 없습니다!");
   } else if (response.status == 200) {
     alert("비밀번호 변경 완료!");
     localStorage.removeItem("access");

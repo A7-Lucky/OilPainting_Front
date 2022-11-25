@@ -26,7 +26,7 @@ window.onload = async function loadMyProfile() {
   const bio = document.getElementById("bio");
 
   let image = document.createElement("img");
-  image.setAttribute("class", "profile_image");
+  image.setAttribute("class", "profile_image")
   image.src = `${backend_base_url}${profile.profile_img}`;
   profile_img.appendChild(image);
 
@@ -55,7 +55,7 @@ async function loadMyArticle() {
   articles.forEach((article) => {
     const newImage = document.createElement("img");
     newImage.setAttribute("id", article.id);
-    newImage.setAttribute("class", "article_img");
+    newImage.setAttribute("class", "article_image");
     newImage.src = `${backend_base_url}${article.image}`;
     article_list.appendChild(newImage);
 
