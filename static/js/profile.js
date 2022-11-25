@@ -26,7 +26,7 @@ window.onload = async function loadMyProfile() {
   const bio = document.getElementById("bio");
 
   let image = document.createElement("img");
-  image.setAttribute("class", "profile_image")
+  image.setAttribute("class", "profile_image");
   image.src = `${backend_base_url}${profile.profile_img}`;
   profile_img.appendChild(image);
 
