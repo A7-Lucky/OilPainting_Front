@@ -2,7 +2,14 @@
 const backend_base_url = 'http://127.0.0.1:8000/'
 const frontend_base_url = 'http://127.0.0.1:5500/templates/'
 
+var token = localStorage.getItem("access");
+
+if (token) {
+    window.location.replace(`http://127.0.0.1:5500/templates/index.html`);
+}
+
 async function handleLogin() {
+    
     const email = document.getElementById('email')
     const password = document.getElementById('password')
 
@@ -49,8 +56,7 @@ async function handleLogin() {
         }).join(''));
         localStorage.setItem("payload", jsonPayload);
         
-        alert('test) 메인 페이지로 이동')
-        // window.location.replace(`${frontend_base_url}articles.html`)
+        window.location.replace(`${frontend_base_url}index.html`)
     } else if (response.status == 401){
         alert('아이디와 비밀번호를 확인해주세요!')
         window.location.reload();
