@@ -5,7 +5,7 @@ body {
   background-color: whitesmoke;
 }
 
-h1 {
+h1.login_title {
   font-size: 30px;
   font-weight: bold;
   margin: 50px 0;
@@ -14,5 +14,18 @@ h1 {
 form {
   margin: 0 auto;
   width: 350px;
+  text-align: center;
+}
+
+div.modal-body {
+  display: grid;
+  justify-content: center;
+}
+
+input.input_box {
+  margin: 5px auto;
+}
+
+div.email_address_box {
   text-align: center;
 }
