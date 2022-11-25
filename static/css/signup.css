@@ -1,5 +1,6 @@
 body {
-    background-color: #a3b899;
+    background-color: wheat;
+    font-family: 'Jua', sans-serif;
 }
 
 h1 {
@@ -7,6 +8,7 @@ h1 {
 }
 
 .login-box {
+    background-color: bisque; 
     border: 3px solid black;
     border-radius: 15px;
     width: 700px;
