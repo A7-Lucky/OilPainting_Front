@@ -1,3 +1,21 @@
+// 로그인한 사용자 액세스 정보 추적 //
+function parseJwt(token) {
+    var base64Url = localStorage.getItem("access").split(".")[1];
+    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    var jsonPayload = decodeURIComponent(
+      window
+        .atob(base64)
+        .split("")
+        .map(function (c) {
+          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+        })
+        .join("")
+    );
+  
+    return JSON.parse(jsonPayload);
+  }
+
+
 // 디테일 페이지 보여주기 //
 const urlParams = new URLSearchParams(window.location.search);
 const article_id = urlParams.get("id");
@@ -31,22 +49,21 @@ loadArticle(article_id);
 // 댓글 리스트 보여주기 //
 async function loadGetComment(article_id) {
     comments = await GetComment(article_id);
-    const user = await getName();
-    const username_list = document.getElementById("username");
+    const userinfo = await getName();
+    const user_list = document.getElementById("email");
     const comment_list = document.getElementById("comment");
     const created_at_list = document.getElementById("comment_created_at");
     const update_button_list = document.getElementById("update_button");
     const delete_button_list = document.getElementById("delete_button");
 
     comments.forEach((comment) => {
-        const newUsername = document.createElement("li");
+        const newUser = document.createElement("li");
         const newComment = document.createElement("li");
         const newCreatedat = document.createElement("li");
-        newUsername.setAttribute("id", comment.id);
-        newUsername.innerText = comment.user
+        newUser.setAttribute("id", comment.id);
+        newUser.innerText = comment.user
         newComment.innerText = comment.comment
         newCreatedat.innerText = comment.created_at
-        username_list.appendChild(newUsername);
         comment_list.appendChild(newComment);
         created_at_list.appendChild(newCreatedat);
 
@@ -75,7 +92,7 @@ async function loadGetComment(article_id) {
         update_button_list.appendChild(update_comment_button);
         delete_button_list.appendChild(delete_comment_button);
 
-        if(user.username != comment.user) {
+        if(userinfo.email != comment.user) {
             update_comment_button.style.visibility ="hidden"
             delete_comment_button.style.visibility ="hidden"
         }

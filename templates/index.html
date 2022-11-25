@@ -50,18 +50,28 @@
 
     <div class="article_area">
         <h1>유화 제작하기</h1>
-        <button type="button" id="article_create" class="btn btn-secondary create_article" onclick="location.href='article_create.html'">작성하기</button>
+        <button type="button" id="article_create" class="btn btn-secondary create_article"
+            onclick="location.href='article_create.html'">작성하기</button>
         <div class="article_box">
-            <ol id="article_user" class="article_user"></ol>
+            <div>
+                <ol id="article_user" class="article_user"></ol>
+                <ol id="article_title" class="article_title"></ol>
+                <ol id="article_content" class="article_content"></ol>
+                <ol id="article_likes_bookmarks" class="article_likes_bookmarks"></ol>
+            </div>
             <ol id="article_img" class="article_img"></ol>
-            <ol id="article_title" class="article_title"></ol>
-            <ol id="article_content" class="article_content"></ol>
-            <ol id="article_likes_bookmarks" class="article_likes_bookmarks"></ol>
         </div>
     </div>
 
     <script src="../static/js/api.js"></script>
     <script src="../static/js/index.js"></script>
+
+    <script>
+        // 인증된 유저만 페이지 접근 가능 //
+        if (!token) {
+          window.location.replace(`${frontend_base_url}/login.html`);
+        }
+      </script>
 </body>
 
 </html>

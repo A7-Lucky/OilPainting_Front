@@ -67,7 +67,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    margin: 50px;
     padding: 20px;
     border: solid 3px rgb(244, 217, 186);
     border-radius: 10px;

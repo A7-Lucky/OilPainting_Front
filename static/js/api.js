@@ -8,7 +8,7 @@ var token = localStorage.getItem("access");
 // 로그인 //
 async function handleLogin() {
     const loginData = {
-        username: document.getElementById("username").value,
+        email: document.getElementById("email").value,
         password: document.getElementById("password").value,
     };
     const response = await fetch(`${backend_base_url}/users/api/token/`, {

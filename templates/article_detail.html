@@ -87,7 +87,7 @@
                     <div class="comment_input">
                         <div class="comment_small_box">
                             <div class="comment_content">
-                                <p id="username" class="username"></p>
+                                <p id="email" class="email"></p>
                                 <p id="comment" class="comment"></p>
                                 <p id="comment_created_at" class="comment_created_at"></p>
                             </div>
@@ -112,6 +112,12 @@
     <script src="../static/js/api.js"></script>
     <script src="../static/js/article_detail.js"></script>
 
+    <script>
+        // 인증된 유저만 페이지 접근 가능 //
+        if (!token) {
+          window.location.replace(`${frontend_base_url}/login.html`);
+        }
+      </script>
 </body>
 
 </html>

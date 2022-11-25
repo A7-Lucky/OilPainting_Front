@@ -49,6 +49,11 @@ img {
     margin-right: 10px;
 }
 
+.article_box {
+    display: flex;
+    flex-direction: row;
+}
+
 .article_user, .article_img, .article_title, .article_content, .article_likes_bookmarks {
     display: flex;
     flex-direction: row;
