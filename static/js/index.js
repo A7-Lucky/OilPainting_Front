@@ -30,11 +30,12 @@ checkLogin()
 window.onload = async function loadArticleList(){
     articles = await getArticleList()
     const article_list = document.getElementById("article_list")
+    const article_img_list = document.getElementById("article_img_list")
 
     articles.forEach(article => {
-        const newuser = document.createElement("ol")
+        const newuser = document.createElement("li")
         const newimage = document.createElement("img")
-        const newtitle = document.createElement("ol")
+        const newtitle = document.createElement("li")
 
         newimage.setAttribute("src", `${backend_base_url}${article.image}`)
         newtitle.setAttribute("id", article.id)
@@ -46,7 +47,7 @@ window.onload = async function loadArticleList(){
         newtitle.setAttribute("onclick", "ArticleDetail(this.id)")
         newimage.setAttribute("onclick", "ArticleDetail(this.id)")
 
-        article_list.appendChild(newimage)
+        article_img_list.appendChild(newimage)
         article_list.appendChild(newuser)
         article_list.appendChild(newtitle)
     });
