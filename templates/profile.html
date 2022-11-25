@@ -28,21 +28,36 @@
     <link rel="stylesheet" href="../static/css/profile.css" />
   </head>
   <body>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">비밀번호 수정</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <input id="old_password" placeholder="현재 비밀번호" type="password" />
+            </div>
+            <div>
+              <input id="new_password" placeholder="새 비밀번호" type="password" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="loadPasswordUpdate()">확인</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="space">
         <a class="navbar-brand" href="../templates/index.html">油畵(유화)</a>
       </div>
       <div class="space">
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="location.href='profile.html'"
-        >
-          프로필
-        </button>
-        <button type="button" class="btn btn-primary" onclick="handleLogout()">
-          로그아웃
-        </button>
+        <button type="button" class="btn btn-primary" onclick="handleLogout()">로그아웃</button>
       </div>
     </nav>
 
@@ -50,16 +65,13 @@
       <div class="main">
         <p class="profile_img" id="profile_img"></p>
         <div class="main_profile">
-          <p class="h3" id="email"></p>
-          <p id="bio"></p>
           <div>
-            <button
-              type="button"
-              class="btn btn-primary"
-              onclick="location.href='profile_update.html'"
-            >
-              프로필 수정
-            </button>
+            <p class="h3" id="email"></p>
+            <p id="bio"></p>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary profile" onclick="location.href='profile_update.html'">프로필 수정</button>
+            <button type="button" class="btn btn-primary profile" data-bs-toggle="modal" data-bs-target="#exampleModal">비밀번호 수정</button>
           </div>
         </div>
       </div>

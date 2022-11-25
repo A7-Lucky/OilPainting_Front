@@ -14,9 +14,7 @@ async function handleLogin() {
   // 이메일 정규식
   let userCheck = RegExp(/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/);
   // 패스워드 정규식 (영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자)
-  let passwdCheck = RegExp(
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/
-  );
+  let passwdCheck = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/);
 
   let email = document.querySelector("#email");
   let password = document.querySelector("#password");
@@ -38,9 +36,7 @@ async function handleLogin() {
     password.focus();
     return false;
   } else if (!passwdCheck.test(password.value)) {
-    alert(
-      "비밀번호는 영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자로 입력해주세요!"
-    );
+    alert("비밀번호는 영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자로 입력해주세요!");
     password.focus();
     return false;
   }
@@ -49,6 +45,7 @@ async function handleLogin() {
     email: document.getElementById("email").value,
     password: document.getElementById("password").value,
   };
+
   const response = await fetch(`${backend_base_url}/users/api/token/`, {
     headers: {
       Accept: "application/json",
@@ -78,7 +75,7 @@ async function handleLogin() {
     localStorage.setItem("payload", jsonPayload);
     window.location.replace(`${frontend_base_url}/index.html`);
   } else {
-    alert("로그인 정보를 확인하세요.", response.status);
+    alert("이메일 주소, 비밀번호를 확인하세요!");
   }
 }
 
@@ -87,9 +84,7 @@ async function handleSignup() {
   // 이메일 정규식
   let userCheck = RegExp(/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/);
   // 패스워드 정규식 (영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자)
-  let passwdCheck = RegExp(
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/
-  );
+  let passwdCheck = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/);
 
   let email = document.querySelector("#email");
   let password = document.querySelector("#password");
@@ -114,9 +109,7 @@ async function handleSignup() {
   }
   // 비밀번호 유효성 검사
   else if (!passwdCheck.test(password.value)) {
-    alert(
-      "비밀번호는 영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자로 입력해주세요!"
-    );
+    alert("비밀번호는 영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자로 입력해주세요!");
     password.focus();
     return false;
   }
@@ -158,9 +151,8 @@ async function handleSignup() {
   if (response.status == 201) {
     alert("가입 완료!");
     window.location.replace(`${frontend_base_url}/login.html`);
-  } else if (response.status == 400) {
+  } else {
     alert("이미 가입된 유저입니다!");
-    window.location.reload();
   }
 }
 
@@ -199,7 +191,7 @@ async function updateMyProfile(formdata) {
     alert("프로필 변경 완료!");
     window.location.replace(`${frontend_base_url}/profile.html`);
   } else {
-    alert(response.status);
+    alert("잘못된 입력입니다!");
   }
 }
 
@@ -213,4 +205,32 @@ async function getMyArticle() {
   });
   response_json = await response.json();
   return response_json;
+}
+
+// 비밀번호 수정하기
+async function updatePassword(formdata) {
+  let passwdCheck = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/);
+
+  const response = await fetch(`${backend_base_url}/users/api/change-password/`, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("access"),
+    },
+    method: "PUT",
+    body: formdata,
+  });
+
+  if (old_password.value == new_password.value) {
+    alert("현재 비밀번호와 새 비밀번호는 같을 수 없습니다!");
+  } else if (!passwdCheck.test(new_password.value)) {
+    alert("새 비밀번호는 영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자로 입력해주세요!");
+  } else if (response.status == 200) {
+    alert("비밀번호 변경 완료!");
+    localStorage.removeItem("access");
+    localStorage.removeItem("refresh");
+    localStorage.removeItem("payload");
+
+    window.location.replace(`${frontend_base_url}/login.html`);
+  } else {
+    alert("비밀번호를 확인하세요!");
+  }
 }

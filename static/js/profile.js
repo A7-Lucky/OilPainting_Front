@@ -30,8 +30,21 @@ window.onload = async function loadMyProfile() {
   profile_img.appendChild(image);
 
   email.innerText = profile.email;
-  bio.innerText = profile.bio;
+  bio.innerText = "[ " + profile.bio + " ]";
 };
+
+// 비밀번호 변경
+async function loadPasswordUpdate() {
+  const old_password = document.getElementById("old_password").value;
+  const new_password = document.getElementById("new_password").value;
+
+  const formdata = new FormData();
+
+  formdata.append("old_password", old_password);
+  formdata.append("new_password", new_password);
+
+  updatePassword(formdata);
+}
 
 // 아티클 리스트 보여주기
 async function loadMyArticle() {

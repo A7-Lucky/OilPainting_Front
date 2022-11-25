@@ -14,8 +14,12 @@ a.navbar-brand {
   font-size: 30px;
 }
 
-button.btn.btn-primary{
+button.btn.btn-primary {
   margin-right: 20px;
+}
+
+button.btn.btn-primary.profile {
+  margin: 0;
 }
 
 form {
@@ -69,4 +73,13 @@ li.article_title {
 
 li.article_content {
   width: 200px;
+}
+
+div.modal-body {
+  display: grid;
+  justify-content: center;
+}
+
+input {
+  margin: 5px auto;
 }

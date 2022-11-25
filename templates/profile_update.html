@@ -33,16 +33,7 @@
         <a class="navbar-brand" href="../templates/index.html">油畵(유화)</a>
       </div>
       <div>
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="location.href='profile.html'"
-        >
-          프로필
-        </button>
-        <button type="button" class="btn btn-primary" onclick="handleLogout()">
-          로그아웃
-        </button>
+        <button type="button" class="btn btn-primary" onclick="handleLogout()">로그아웃</button>
       </div>
     </nav>
 
@@ -51,30 +42,12 @@
         <p id="profile_update_img"></p>
         <input type="file" class="form-control" id="profile_img" />
         <br />
-        <textarea
-          name=""
-          placeholder="하고 싶은 말이 있으신가요?"
-          id="bio"
-          cols="50"
-          rows="10"
-        ></textarea>
+        <textarea name="" placeholder="하고 싶은 말이 있으신가요?" id="bio" cols="50" rows="10"></textarea>
       </div>
       <br />
       <div>
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="loadMyProfileUpdate()"
-        >
-          확인
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="location.href='profile.html'"
-        >
-          취소
-        </button>
+        <button type="button" class="btn btn-primary" onclick="loadMyProfileUpdate()">확인</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='profile.html'">취소</button>
       </div>
     </form>
 
