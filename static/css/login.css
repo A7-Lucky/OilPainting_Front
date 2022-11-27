@@ -1,19 +1,61 @@
 body {
-    height: 100vh;
-    display: grid;
-    align-items: center;
-    background-color: whitesmoke;
-    font-family: 'Jua', sans-serif;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  background-color: wheat;
+  font-family: "Jua", sans-serif;
 }
 
-h1 {
-    font-size: 30px;
-    font-weight: bold;
-    margin: 50px 0;
+h1.login_title {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 70px 0;
 }
 
 form {
-    margin: 0 auto;
-    width: 350px;
-    text-align: center;
+  margin: auto;
+  text-align: center;
+}
+
+div.modal-body {
+  display: grid;
+  justify-content: center;
+}
+
+div.modal-footer {
+  justify-content: center;
+}
+
+input.form-control {
+  margin: 0 auto;
+  width: 360px;
+}
+
+label {
+  margin-left: 70px;
+}
+
+input.input_box {
+  margin: 5px auto;
+}
+
+div.email_address_box {
+  text-align: center;
+}
+
+div.login-box {
+  background-color: bisque;
+  border: 3px solid black;
+  border-radius: 15px;
+  width: 500px;
+  height: 600px;
+  text-align: center;
+}
+
+button {
+  font-size: 15px;
+  font-weight: bold;
+  width: 180px;
+  height: 40px;
+  margin: auto;
 }

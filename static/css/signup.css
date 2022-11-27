@@ -1,0 +1,45 @@
+body {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  background-color: wheat;
+  font-family: 'Jua', sans-serif;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+form {
+  margin: auto;
+}
+
+h1 {
+  margin: 80px auto;
+}
+
+input.form-control {
+  margin: 0 auto;
+  width: 360px;
+}
+
+label {
+  margin-left: 70px;
+}
+
+button {
+  margin-top: 50px;
+  width: 174px;
+}
+
+div.signup_box {
+  background-color: bisque;
+  border: 3px solid black;
+  border-radius: 15px;
+  width: 500px;
+  height: 600px;
+  text-align: center;
+}
