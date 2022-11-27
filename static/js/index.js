@@ -30,29 +30,22 @@ checkLogin()
 window.onload = async function loadArticleList(){
     articles = await getArticleList()
     const article_list = document.getElementById("article_list")
-    const article_img_list = document.getElementById("article_img_list")
 
     articles.forEach(article => {
         const newuser = document.createElement("li")
         const newimage = document.createElement("img")
-        const newtitle = document.createElement("li")
 
-        newimage.setAttribute("src", `${backend_base_url}${article.image}`)
-        newtitle.setAttribute("id", article.id)
+        newimage.setAttribute("src", `${backend_base_url}/${article.image}`)
         newimage.setAttribute("id", article.id)
 
         newuser.innerText = article.user
-        newtitle.innerText = article.title
 
-        newtitle.setAttribute("onclick", "ArticleDetail(this.id)")
         newimage.setAttribute("onclick", "ArticleDetail(this.id)")
 
-        article_img_list.appendChild(newimage)
         article_list.appendChild(newuser)
-        article_list.appendChild(newtitle)
+        article_list.appendChild(newimage)
     });
 }
-
 
 // 아티클 생성 (임시) //
 async function CreateArticle() {

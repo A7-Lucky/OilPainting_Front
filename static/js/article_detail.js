@@ -28,7 +28,7 @@ async function loadArticle(article_id) {
 
     const image = document.getElementById("image");
     let articleImage = document.createElement("img")
-    articleImage.src = `${backend_base_url}${article.image}`
+    articleImage.src = `${backend_base_url}/${article.image}`
     image.appendChild(articleImage)
 
     const content = document.getElementById("content");
