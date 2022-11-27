@@ -56,7 +56,7 @@ async function loadMyArticle() {
     const newImage = document.createElement("img");
     newImage.setAttribute("id", article.id);
     newImage.setAttribute("class", "article_image");
-    newImage.src = `${backend_base_url}${article.image}`;
+    newImage.src = `${backend_base_url}/${article.image}`;
     article_list.appendChild(newImage);
 
     const newTitle = document.createElement("li");
