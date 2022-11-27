@@ -1,5 +1,9 @@
 console.log("profile_update 로딩 완료");
 
+if (!token) {
+  window.location.replace(`${frontend_base_url}/login.html`);
+}
+
 // 기존 프로필 이미지 보여주기
 window.onload = async function loadMyProfile() {
   profile = await getMyProfile();

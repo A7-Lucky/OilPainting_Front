@@ -51,11 +51,37 @@
 
     <script src="../static/js/api.js"></script>
     <script src="../static/js/signup.js"></script>
-    <script>
-      // 인증된 유저는 인덱스 페이지로 //
-      if (token) {
-        window.location.replace(`http://127.0.0.1:5500/templates/index.html`);
-      }
-    </script>
   </body>
 </html>
+
+{% comment %} <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/static/css/signup.css">
+
+    <title>油畵(유화) | Signup</title>
+    
+</head>
+
+<body>
+    <div class="login-box">
+    <h1>油畵(유화)</h1>
+    <h1>SignUp</h1>
+    <form>
+        <input type="email" name="email" id="email" placeholder="email"><br>
+        <input type="password" name="password" id="password" placeholder="password"><br>
+        <input type="password" name="password2" id="password2" placeholder="password check"><br>
+        <button type="button" id="signupbtn" onclick="handleSignup()">가입하기</button><br> 
+        <p>이미 계정이 있으신가요? <a href="login.html">로그인 페이지로</a></p>
+    </form>
+    </div>
+    <script src="/static/js/signup.js"></script>
+</body>
+</html> {% endcomment %}
