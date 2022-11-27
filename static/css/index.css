@@ -2,6 +2,8 @@ body {
   font-family: 'Jua', sans-serif;
   background: white;
   color: black;
+  height: 100vh;
+  display: grid;
 }
 
 body.dark {
@@ -12,11 +14,16 @@ body.dark {
 nav.navbar {
   width: 100%;
   justify-content: space-between;
+  position: fixed;
 }
 
 a.navbar-brand {
   margin: 0 20px;
   font-size: 30px;
+}
+
+button.btn.btn-primary {
+  margin-right: 20px;
 }
 
 div.space {
