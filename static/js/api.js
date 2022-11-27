@@ -197,13 +197,16 @@ async function updateTokenPassword(formdata) {
   }
 }
 
-// 주소로 아티클 페이지받기 //
-const urlParams = new URLSearchParams(window.location.search);
-const page_id = urlParams.get("page");
+
 
 
 
 //index.html ------------------------------------------------------------------------->
+
+// 주소로 아티클 페이지받기 //
+const urlParams = new URLSearchParams(window.location.search);
+const page_id = urlParams.get("page");
+
 
 // 아티클 리스트 보여주기 //
 async function getArticleList() {
@@ -216,7 +219,6 @@ async function getArticleList() {
             method: 'GET',
         })
     }
-    
     response_json = await response.json()
     return response_json
 }
@@ -388,7 +390,7 @@ async function getName() {
 }
 
 
-
+// 다크 모드 //
 function darkmode() {
     document.getElementById('body').classList.toggle('dark');
   }

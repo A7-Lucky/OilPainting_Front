@@ -14,46 +14,32 @@ h1 {
 }
 
 form {
-  margin: 50px auto;
-  width: 350px;
+  margin: auto;
+}
+
+h1 {
+  margin: 80px auto;
+}
+
+input.form-control {
+  margin: 0 auto;
+  width: 360px;
+}
+
+label {
+  margin-left: 70px;
 }
 
 button {
-  display: block;
-  width: 350px;
-  margin-top: 15px;
+  margin-top: 50px;
+  width: 174px;
 }
 
-/* h1 {
-    text-align: center;
+div.signup_box {
+  background-color: bisque;
+  border: 3px solid black;
+  border-radius: 15px;
+  width: 500px;
+  height: 600px;
+  text-align: center;
 }
-
-.login-box {
-    background-color: bisque; 
-    border: 3px solid black;
-    border-radius: 15px;
-    width: 700px;
-    height: 600px;
-    text-align: center;
-    padding-top: 50px;
-    margin: auto;
-    margin-top: 130px;
-}
-form {
-    margin-top: 70px;
-}
-
-input {
-    margin-top: 15px;
-    width: 350px;
-    height: 35px;
-    padding-left: 15px;
-}
-
-button {
-    font-size: 15px;
-    font-weight: bold;
-    width: 230px;
-    height: 40px;
-    margin-top: 40px;
-} */

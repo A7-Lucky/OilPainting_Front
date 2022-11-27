@@ -29,6 +29,7 @@
 </head>
 
 <body id='body'>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog article_modal article_modal">
             <div class="modal-content article_modal_small">
@@ -156,6 +157,7 @@
                             </p>
                         </div>
                     </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" onclick="CreateArticle()">작성하기</button>
@@ -173,10 +175,10 @@
                     <a class="nav-link" id="username" href="#"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">My</a>
+                    <a class="nav-link" href="profile.html">My</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="handleLogout()">Logout</a>
                 </li>
             </ul>
         </div>
@@ -188,7 +190,8 @@
             작성하기
         </button>
         <div class="article_box">
-            <ol id="article_list" class="article_list"></ol>
+            <div class="profile_img"></div>
+            <ol id="article_list" class="article_list"><ol>
         </div>
     </div>
 
@@ -221,3 +224,4 @@
 </body>
 
 </html>
+

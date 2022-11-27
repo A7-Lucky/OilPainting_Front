@@ -15,6 +15,9 @@ function parseJwt(token) {
     return JSON.parse(jsonPayload);
   }
 
+if (!token) {
+  window.location.replace(`${frontend_base_url}/login.html`);
+}
 
 // 유저 정보 가져오기 //
 async function checkLogin(){
@@ -26,21 +29,19 @@ async function checkLogin(){
 checkLogin()
 
 
-// 아티클 리스트 가져오기 (임시) //
+// 아티클 리스트 가져오기 (페이지네이션 적용)  //
 window.onload = async function loadArticleList(){
     articles = await getArticleList()
-    console.log(articles)
-    articles = articles['results']
-    console.log(articles)
+    
     const article_list = document.getElementById("article_list")
 
     articles.forEach(article => {
         // 사진만 들어가는 버전
+
         const newimage = document.createElement("img")
 
         newimage.setAttribute("src", `${backend_base_url}/${article.image}`)
         newimage.setAttribute("id", article.id)
-
 
         newimage.setAttribute("onclick", "ArticleDetail(this.id)")
 
@@ -59,7 +60,7 @@ window.onload = async function loadArticleList(){
 }
 
 
-// 아티클 생성 (임시) //
+// 아티클 생성 //
 async function CreateArticle() {
     const title = document.getElementById("title").value
     const content = document.getElementById("content").value
