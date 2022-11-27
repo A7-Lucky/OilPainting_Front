@@ -61,7 +61,6 @@ function handleLogout() {
 
 //index.html ------------------------------------------------------------------------->
 // 아티클 리스트 보여주기 //
-
 async function getArticleList() {
     if (!page_id) {
         var response = await fetch(`${backend_base_url}/articles/viewset/`, {

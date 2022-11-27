@@ -26,7 +26,6 @@ async function checkLogin(){
 checkLogin()
 
 
-
 // 아티클 리스트 가져오기 (임시) //
 window.onload = async function loadArticleList(){
     articles = await getArticleList()
@@ -41,6 +40,7 @@ window.onload = async function loadArticleList(){
 
         newimage.setAttribute("src", `${backend_base_url}/${article.image}`)
         newimage.setAttribute("id", article.id)
+
 
         newimage.setAttribute("onclick", "ArticleDetail(this.id)")
 
