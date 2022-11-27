@@ -1,9 +1,9 @@
 body {
   font-family: 'Jua', sans-serif;
-  background-color: whitesmoke;
-  color: black;
   height: 100vh;
   display: grid;
+  background-color: whitesmoke;
+  color: black;
 }
 
 body.dark {
@@ -47,7 +47,7 @@ input.form-control {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto;
+  margin: 100px auto;
   width: 1500px;
 }
 

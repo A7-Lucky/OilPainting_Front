@@ -8,6 +8,11 @@
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
+
     <!-- CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -38,16 +43,18 @@
     </nav>
 
     <form>
-      <div>
-        <p id="profile_update_img"></p>
-        <input type="file" class="form-control" id="profile_img" />
+      <div class="main">
+        <div>
+          <p id="profile_update_img"></p>
+          <input type="file" class="form-control" id="profile_img" />
+          <br />
+          <textarea name="" placeholder="하고 싶은 말이 있으신가요?" id="bio" cols="50" rows="10"></textarea>
+        </div>
         <br />
-        <textarea name="" placeholder="하고 싶은 말이 있으신가요?" id="bio" cols="50" rows="10"></textarea>
-      </div>
-      <br />
-      <div>
-        <button type="button" class="btn btn-primary" onclick="loadMyProfileUpdate()">확인</button>
-        <button type="button" class="btn btn-primary" onclick="location.href='profile.html'">취소</button>
+        <div>
+          <button type="button" class="btn btn-primary" onclick="loadMyProfileUpdate()">확인</button>
+          <button type="button" class="btn btn-primary" onclick="location.href='profile.html'">취소</button>
+        </div>
       </div>
     </form>
 

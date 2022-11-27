@@ -82,3 +82,4 @@ function MoveNext() {
   var newpage_id = Number(page_id) + 1
   location.replace(`${frontend_base_url}/index.html?page=${newpage_id}`)
 }
+

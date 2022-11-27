@@ -1,6 +1,8 @@
 body {
+  height: 100vh;
   display: grid;
   background-color: whitesmoke;
+  font-family: 'Jua', sans-serif;
 }
 
 nav.navbar {
@@ -23,7 +25,7 @@ button.btn.btn-primary.profile {
 }
 
 form {
-  margin: 80px auto;
+  margin: auto;
   text-align: center;
   width: 1500px;
 }
@@ -32,7 +34,7 @@ div.main {
   display: flex;
   justify-content: center;
   width: auto;
-  margin: 50px auto;
+  margin: 150px auto 50px auto;
 }
 
 div.main_profile {
