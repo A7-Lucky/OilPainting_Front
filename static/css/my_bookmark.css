@@ -1,62 +1,62 @@
 body {
-    height: 100vh;
-    display: grid;
-    font-family: "Jua", sans-serif;
-    background-color: whitesmoke;
+  height: 100vh;
+  display: grid;
+  font-family: "Jua", sans-serif;
+  background-color: whitesmoke;
 }
 
 nav.navbar {
-    width: 100%;
-    justify-content: space-between;
-    height: 50px;
+  width: 100%;
+  justify-content: space-between;
+  height: 50px;
 }
 
 a.navbar-brand {
-    margin: 0 20px;
-    font-size: 30px;
+  margin: 0 20px;
+  font-size: 30px;
 }
 
 .nav-item {
-    margin-right: 10px;
-    font-size: 15px;
+  margin-right: 10px;
+  font-size: 15px;
 }
 
 div.space {
-    display: flex;
+  display: flex;
 }
 
 .btn-link {
-    color: grey;
+  color: grey;
 }
 
 img.article_image {
-    width: 256px;
-    height: 256px;
-    margin: 20px;
-    cursor: pointer;
+  width: 256px;
+  height: 256px;
+  margin: 20px;
+  cursor: pointer;
 }
 
 ol {
-    padding-left: 0;
-    display: flex;
-    flex-wrap: wrap;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 li {
-    list-style: none;
-    margin: auto 25px;
+  list-style: none;
+  margin: auto 25px;
 }
 
 li.article_title {
-    width: 150px;
+  width: 150px;
 }
 
 li.article_content {
-    width: 200px;
+  width: 200px;
 }
 
 form {
-    margin: 50px auto;
-    text-align: center;
-    width: 1500px;
+  margin: 50px auto;
+  text-align: center;
+  width: 1500px;
 }
