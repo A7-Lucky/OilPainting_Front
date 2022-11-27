@@ -1,7 +1,7 @@
 body {
   height: 100vh;
   display: grid;
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
   background-color: whitesmoke;
 }
 
@@ -45,5 +45,5 @@ img {
 }
 
 div.main {
-  margin: 150px auto;
+  margin: 100px auto;
 }

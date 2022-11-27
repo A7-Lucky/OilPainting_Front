@@ -1,7 +1,7 @@
 body {
   height: 100vh;
   display: grid;
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
   background-color: whitesmoke;
 }
 
@@ -47,7 +47,7 @@ div.main {
   display: flex;
   justify-content: center;
   width: auto;
-  margin: 150px auto 50px auto;
+  margin: 100px auto 50px auto;
 }
 
 div.main_profile {
@@ -63,6 +63,7 @@ p.profile_img {
 
 img {
   margin: 20px;
+  cursor: pointer;
 }
 
 img.profile_image {

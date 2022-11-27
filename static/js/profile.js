@@ -1,5 +1,3 @@
-console.log("profile 로딩 완료");
-
 if (!token) {
   window.location.replace(`${frontend_base_url}/login.html`);
 }
@@ -43,6 +41,7 @@ async function loadMyArticle() {
     const newImage = document.createElement("img");
     newImage.setAttribute("id", article.id);
     newImage.setAttribute("class", "article_image");
+    newImage.setAttribute("onclick", "ArticleDetail(this.id)");
     newImage.src = `${backend_base_url}/${article.image}`;
     article_list.appendChild(newImage);
 

@@ -1,154 +1,156 @@
 body {
-    font-family: 'Jua', sans-serif;
-    background-color: whitesmoke;
+  font-family: "Jua", sans-serif;
+  background-color: whitesmoke;
 }
 
 nav.navbar {
-    width: 100%;
-    justify-content: space-between;
-    height: 50px;
+  width: 100%;
+  justify-content: space-between;
+  height: 50px;
 }
 
 a.navbar-brand {
-    margin: 0 20px;
-    font-size: 30px;
+  margin: 0 20px;
+  font-size: 30px;
 }
 
 .nav-item {
-    margin-right: 10px;
-    font-size: 15px;
+  margin-right: 10px;
+  font-size: 15px;
 }
 
 div.space {
-    display: flex;
+  display: flex;
 }
 
 .btn-link {
-    color: grey;
+  color: grey;
 }
 
 input.form-control {
-    width: 500px;
+  width: 500px;
 }
 
 .material-symbols-outlined {
-    font-size: 30px;
-    margin: 10px;
+  font-size: 30px;
+  margin: 10px;
 }
 
 li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .article_area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .user_info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .comment_input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .comment_small_box {
-    display: flex;
-    flex-direction: row;
-    margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
 }
 
 .comment_button {
-    display: flex;
-    flex-direction: row;
-    margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
 }
 
 .comment_box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px;
-    padding: 20px;
-    border: solid 2px rgb(201, 200, 199);
-    border-radius: 10px;
-    width: 1000px;
-    background-color: rgb(247, 241, 232);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+  padding: 20px;
+  border: solid 2px rgb(201, 200, 199);
+  border-radius: 10px;
+  width: 1000px;
+  background-color: rgb(247, 241, 232);
 }
 
 .update_button,
 .delete_button {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .likes_bookmarks {
-    display: flex;
-    flex-direction: row;   
+  display: flex;
+  flex-direction: row;
 }
 
 .dolike {
-    margin: 0 10px 10px 0;
+  margin: 0 10px 10px 0;
 }
 
 .dobookmark {
-    margin: 0 10px 10px 50px;
+  margin: 0 10px 10px 50px;
 }
 
-.likes, .bookmarks {
-    margin-top: 5px;
+.likes,
+.bookmarks {
+  margin-top: 5px;
 }
 
 .comment_input_box {
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
 }
 
 .comment_input_button {
-    height: 55px;
-    width: 100px;
-    margin-left: 20px;
+  height: 55px;
+  width: 100px;
+  margin-left: 20px;
 }
 
 .create_button {
-    height: 30px;
-    margin: 1px;
+  height: 30px;
+  margin: 1px;
 }
 
 .form-control {
-    width: 30px;
+  width: 30px;
 }
 
 .comment_content {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-.comment, .comment_created_at {
-    list-style: none;
-    margin-left: 100px;
+.comment,
+.comment_created_at {
+  list-style: none;
+  margin-left: 100px;
 }
 
 .profile_img {
-    width: 50px;
-    height: 50px;
-    border: solid 1px grey;
-    border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  border: solid 1px grey;
+  border-radius: 50px;
 }
 
 img {
-    width: 400px;
-    height: 400px;
+  width: 400px;
+  height: 400px;
 }
