@@ -198,6 +198,7 @@ async function DoLike(article_id) {
 
   if (response.status == 200) {
     window.location.replace(`${frontend_base_url}/article_detail.html?id=${article_id}`);
+    alert(response_json["message"]);
   } else {
     alert(response.status);
   }
@@ -216,6 +217,7 @@ async function DoBookmark(article_id) {
 
   if (response.status == 200) {
     window.location.replace(`${frontend_base_url}/article_detail.html?id=${article_id}`);
+    alert(response_json["message"]);
   } else {
     alert(response.status);
   }
