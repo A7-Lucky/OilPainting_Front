@@ -16,6 +16,23 @@ function handleLogout() {
   window.location.replace(`${frontend_base_url}/login.html`);
 }
 
+// 회원 탈퇴
+async function handleUnsignup() {
+  const response = await fetch(`${backend_base_url}/users/signup/`, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("access"),
+    },
+    method: "DELETE",
+  });
+
+  localStorage.removeItem("access");
+  localStorage.removeItem("refresh");
+  localStorage.removeItem("payload");
+
+  response_json = await response.json();
+  return response_json;
+}
+
 // 프로필 가져오기
 async function getMyProfile() {
   const response = await fetch(`${backend_base_url}/users/profile/`, {

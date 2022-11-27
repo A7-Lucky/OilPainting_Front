@@ -25,3 +25,17 @@ async function loadMyProfileUpdate() {
 
   updateMyProfile(formdata);
 }
+
+// 회원 탈퇴
+async function Unsignup() {
+  const name = await getName();
+  const email = document.getElementById("email_check").value
+  
+  if (email == name.email) {
+    handleUnsignup()
+    alert("회원 탈퇴 완료!")
+    window.location.replace(`${frontend_base_url}/signup.html`);
+  } else {
+    alert("이메일을 다시 입력해주세요.")
+  }
+}

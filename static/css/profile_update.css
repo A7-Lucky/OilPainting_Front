@@ -30,7 +30,7 @@ div.space {
 }
 
 button.btn.btn-primary {
-  margin-right: 20px;
+  margin: auto 10px;
 }
 
 form {
@@ -46,4 +46,8 @@ img {
 
 div.main {
   margin: 100px auto;
+}
+
+button.exit {
+  margin-top: 10px;
 }
