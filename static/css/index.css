@@ -1,7 +1,18 @@
-body {
-  height: 100vh;
-  display: grid;
-  background-color: whitesmoke;
+body 
+    font-family: 'Jua', sans-serif;
+    height: 100vh;
+    display: grid;
+    background-color: whitesmoke;
+}
+
+nav.navbar {
+    width: 100%;
+    justify-content: space-between;
+}
+
+a.navbar-brand {
+    margin: 0 20px;
+    font-size: 30px;
 }
 
 nav.navbar {
@@ -17,4 +28,72 @@ a.navbar-brand {
 
 button.btn.btn-primary {
   margin-right: 20px;
+}
+
+.nav-item {
+    margin-right: 50px;
+    font-size: 20px;
+}
+
+.article_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    width: 1500px;
+}
+
+button {
+    margin: 20px;    
+}
+
+li {
+    list-style: none;
+    margin: auto 25px;
+    font-size: 20px;
+}
+
+ol {
+    padding-left: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img {
+    margin: 10px 10px;
+    width: 500px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.article_box {
+    display: flex;
+    flex-direction: row;
+}
+
+.article_list {
+    display: flex;
+    flex-direction: row;
+}
+
+.create_article {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;;
+}
+
+.modal_content {
+    height: 100px;
+}
+
+.article_modal {
+    display: flex;
+}
+
+.article_modal_small {
+    display: flex;
+    align-items: center;
+    width: 800px;
 }
