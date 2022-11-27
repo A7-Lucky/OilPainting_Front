@@ -43,3 +43,7 @@ img {
   width: 128px;
   height: 128px;
 }
+
+div.main {
+  margin: 150px auto;
+}

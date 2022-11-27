@@ -1,7 +1,3 @@
-if (!token) {
-  window.location.replace(`${frontend_base_url}/login.html`);
-}
-
 // 유저 정보 가져오기 //
 async function checkLogin(){
     const name = await getName();
@@ -12,31 +8,57 @@ async function checkLogin(){
 checkLogin()
 
 
-// 아티클 리스트 가져오기 (임시) //
+// 아티클 리스트 가져오기 (페이지네이션 적용)  //
 window.onload = async function loadArticleList(){
     articles = await getArticleList()
+    articles = articles['results']
+    
     const article_list = document.getElementById("article_list")
 
     articles.forEach(article => {
-        // const newuser = document.createElement("li")
+        // 사진만 들어가는 버전
         const newimage = document.createElement("img")
 
         newimage.setAttribute("src", `${backend_base_url}/${article.image}`)
         newimage.setAttribute("id", article.id)
 
-        // newuser.innerText = article.user
-
         newimage.setAttribute("onclick", "ArticleDetail(this.id)")
 
-        // article_list.appendChild(newuser)
         article_list.appendChild(newimage)
+
+        // 제목+내용까지
+        // const newuser = document.createElement("ol")
+        // const newtitle = document.createElement("ol")
+        // newtitle.setAttribute("id", article.id)
+        // newuser.innerText = article.user
+        // newtitle.innerText = article.title
+        // newtitle.setAttribute("onclick", "ArticleDetail(this.id)")
+        // article_list.appendChild(newuser)
+        // article_list.appendChild(newtitle)
     });
 }
 
-// 아티클 생성 (임시) //
+
+// 아티클 생성 //
 async function CreateArticle() {
     const title = document.getElementById("title").value
     const content = document.getElementById("content").value
     const image = document.getElementById("image").files[0]
-    loadCreateArticle(title, content, image)
+    const style = $('input[name=setstyle]:checked').val();
+    loadCreateArticle(title, content, image, style)
 }
+
+function MovePrevious() {
+    if (!page_id || page_id == 1) {
+      alert("첫 페이지입니다")
+    } else {
+      var newpage_id = Number(page_id) - 1
+      location.replace(`${frontend_base_url}/index.html?page=${newpage_id}`)
+    }
+}
+
+function MoveNext() {
+  var newpage_id = Number(page_id) + 1
+  location.replace(`${frontend_base_url}/index.html?page=${newpage_id}`)
+}
+

@@ -1,5 +1,6 @@
 body {
     font-family: 'Jua', sans-serif;
+    background-color: whitesmoke;
 }
 
 nav.navbar {
@@ -83,7 +84,7 @@ p {
     border: solid 2px rgb(201, 200, 199);
     border-radius: 10px;
     width: 1000px;
-    background-color: lightyellow;
+    background-color: rgb(247, 241, 232);
 }
 
 .update_button,
