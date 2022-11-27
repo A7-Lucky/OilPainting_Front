@@ -1,0 +1,31 @@
+body {
+  height: 100vh;
+  display: grid;
+  background-color: whitesmoke;
+}
+
+nav.navbar {
+  width: 100%;
+  justify-content: space-between;
+  position: fixed;
+}
+
+a.navbar-brand {
+  margin: 0 20px;
+  font-size: 30px;
+}
+
+button.btn.btn-primary {
+  margin-right: 20px;
+}
+
+form {
+  margin: auto;
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+}

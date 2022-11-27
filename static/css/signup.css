@@ -1,9 +1,30 @@
 body {
-    background-color: wheat;
-    font-family: 'Jua', sans-serif;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  background-color: wheat;
+  font-family: 'Jua', sans-serif;
 }
 
 h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+form {
+  margin: 50px auto;
+  width: 350px;
+}
+
+button {
+  display: block;
+  width: 350px;
+  margin-top: 15px;
+}
+
+/* h1 {
     text-align: center;
 }
 
@@ -30,12 +51,9 @@ input {
 }
 
 button {
-    
     font-size: 15px;
     font-weight: bold;
     width: 230px;
     height: 40px;
     margin-top: 40px;
-}
-
-
+} */
