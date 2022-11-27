@@ -2,6 +2,7 @@ body {
   height: 100vh;
   display: grid;
   background-color: whitesmoke;
+  font-family: 'Jua', sans-serif;
 }
 
 nav.navbar {
@@ -28,4 +29,8 @@ img {
   border-radius: 50%;
   width: 128px;
   height: 128px;
+}
+
+div.main {
+  margin: 150px auto;
 }
