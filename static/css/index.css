@@ -1,24 +1,19 @@
 body {
-    font-family: 'Jua', sans-serif;
-    height: 100vh;
-    display: grid;
-    background-color: whitesmoke;
+  font-family: 'Jua', sans-serif;
+  height: 100vh;
+  display: grid;
+  background-color: whitesmoke;
+  color: black;
 }
 
-nav.navbar {
-    width: 100%;
-    justify-content: space-between;
-}
-
-a.navbar-brand {
-    margin: 0 20px;
-    font-size: 30px;
+body.dark {
+  background: #1b1d25;
+  color: white;
 }
 
 nav.navbar {
   width: 100%;
   justify-content: space-between;
-  position: fixed;
 }
 
 a.navbar-brand {
@@ -30,70 +25,199 @@ button.btn.btn-primary {
   margin-right: 20px;
 }
 
+div.space {
+  display: flex;
+}
+
+input.form-control {
+  width: 500px;
+}
+
+.material-symbols-outlined {
+  font-size: 30px;
+  margin: 10px;
+}
+
 .nav-item {
-    margin-right: 50px;
-    font-size: 20px;
+  margin-right: 50px;
+  font-size: 20px;
 }
 
 .article_area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 100px auto;
-    width: 1500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px auto;
+  width: 1500px;
 }
 
 button {
-    margin: 20px;    
+  margin: 20px;    
 }
 
 li {
-    list-style: none;
-    margin: auto 25px;
-    font-size: 20px;
+  list-style: none;
+  margin: auto 25px;
+  font-size: 20px;
 }
 
 ol {
-    padding-left: 0px;
-    display: flex;
-    flex-wrap: wrap;
+  padding-left: 0px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 img {
-    margin: 10px 10px;
-    width: 500px;
-    height: 500px;
-
-    display: flex;
-    flex-direction: column;
+  margin: 10px 10px;
+  width: 500px;
+  height: 500px;
+  
+  display: flex;
+  flex-direction: column;
 }
 
 .article_box {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .article_list {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .create_article {
-    width: 200px;
-    height: 50px;
-    font-size: 20px;;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;;
 }
 
 .modal_content {
-    height: 100px;
+  height: 100px;
 }
 
 .article_modal {
-    display: flex;
+  display: flex;
 }
 
 .article_modal_small {
-    display: flex;
+  display: flex;
+  align-items: center;
+  width: 800px;
+}
+
+
+.radio {
+  text-align: center;
+}
+
+.imgs {
+  width: 100px;
+  height: 100px;
+}
+
+.style-imgs {
+  display: flex;
+  width: 500px;
+  padding: 20px;
+  overflow: scroll;
+  overflow-y: hidden;
+}
+
+/* .style-imgs::-webkit-scrollbar {
+  display: none;
+} */
+
+.style-imgs>div {
+  margin: 10px;
+}
+
+  
+label {
+    display: inline-flex;
     align-items: center;
-    width: 800px;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  
+  [type="checkbox"] {
+    appearance: none;
+    position: relative;
+    border: max(2px, 0.1em) solid gray;
+    border-radius: 1.25em;
+    width: 2.25em;
+    height: 1.25em;
+  }
+  
+  [type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    transform: scale(0.8);
+    background-color: gray;
+    transition: left 250ms linear;
+  }
+  
+  [type="checkbox"]:checked {
+    background-color: gray;
+    border-color: gray;
+  }
+  
+  [type="checkbox"]:checked::before {
+    background-color: white;
+    left: 1em;
+  }
+  
+  [type="checkbox"]:disabled {
+    border-color: lightgray;
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  [type="checkbox"]:disabled:before {
+    background-color: lightgray;
+  }
+  
+  [type="checkbox"]:disabled + span {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  [type="checkbox"]:focus-visible {
+    outline-offset: max(2px, 0.1em);
+    outline: max(2px, 0.1em) solid gray;
+  }
+  
+  [type="checkbox"]:enabled:hover {
+    box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+  }
+
+ 
+/* footer 크기 조절 테스트용 */  
+/* #wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+#content {
+    margin-top: 100px;
+    padding-bottom: 20px;
+} footer의 높이 */
+
+
+footer {
+    width: 100%;
+    height: 20px; /* footer의 높이 */
+    position: absolute;  
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+/* footer 하단 고정 [E] */
+
+.pagination {
+  justify-content: center;
 }

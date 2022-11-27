@@ -47,7 +47,7 @@ async function updateMyProfile(formdata) {
   }
 }
 
-// 아티클 가져오기
+// 마이 아티클 가져오기
 async function getMyArticle() {
   const response = await fetch(`${backend_base_url}/articles/myarticle/`, {
     headers: {
@@ -122,12 +122,27 @@ async function updateTokenPassword(formdata) {
 }
 
 
+
+
+
 //index.html ------------------------------------------------------------------------->
+
+// 주소로 아티클 페이지받기 //
+const urlParams = new URLSearchParams(window.location.search);
+const page_id = urlParams.get("page");
+
+
 // 아티클 리스트 보여주기 //
 async function getArticleList() {
-    const response = await fetch(`${backend_base_url}/articles`, {
-        method: 'GET',
-    })
+    if (!page_id) {
+        var response = await fetch(`${backend_base_url}/articles/viewset/`, {
+            method: 'GET',
+        })
+    } else {
+        var response = await fetch(`${backend_base_url}/articles/viewset/?page=${page_id}`, {
+            method: 'GET',
+        })
+    }
     response_json = await response.json()
     return response_json
 }
@@ -141,12 +156,13 @@ function ArticleDetail(article_id) {
 
 
 // 아티클 작성하기 //
-async function loadCreateArticle(title, content, image) {
+async function loadCreateArticle(title, content, image, style) {
     const formdata = new FormData();
 
     formdata.append('title', title)
     formdata.append('content', content)
-    formdata.append('image', image)
+    formdata.append('input', image)
+    formdata.append('style', style)
 
     const response = await fetch(`${backend_base_url}/articles/`, {
         headers: {
@@ -296,3 +312,9 @@ async function getName() {
         return null;
     }
 }
+
+
+// 다크 모드 //
+function darkmode() {
+    document.getElementById('body').classList.toggle('dark');
+  }

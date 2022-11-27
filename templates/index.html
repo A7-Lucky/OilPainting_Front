@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <!-- JavaScript Bundle with Popper -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
@@ -30,8 +26,10 @@
     <link rel="stylesheet" href="../static/css/index.css" />
 
     <title>油畵(유화) | Home</title>
+</head>
 
-<body>
+<body id='body'>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog article_modal article_modal">
             <div class="modal-content article_modal_small">
@@ -49,6 +47,117 @@
                     <div class="input-group mb-3">
                         <input type="file" class="form-control" id="image" placeholder="image" required />
                     </div>
+                    스타일 선택
+                    <div class="style-imgs">
+                        <div class="imgbox">
+                            <span>
+                                <img class="imgs" id="a1"
+                                  src="https://img.artnshop.net/thumbnail/thumb_20200129222337_026_composition_vii.jpg"
+                                  alt="eccv16/composition_vii.t7">
+                              </span>
+                              <p>&nbsp; &nbsp; &nbsp; &nbsp;<input type="radio" class="radio" name="setstyle" id="a1" value="eccv16/composition_vii.t7"
+                                  onclick="getStyle(event)" /></p>
+                        </div>
+                        <div class="imgbox">
+                            <span>
+                              <img class="imgs" id="a2" src="https://i.pinimg.com/originals/45/e1/c2/45e1c21835ef2bd9b0f4b1a9a0a6ad98.jpg"
+                                alt="eccv16/la_muse.t7">
+                            </span>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;
+                              <input type="radio" class="radio" name="setstyle" id="a2" value="eccv16/la_muse.t7"
+                                onclick="getStyle(event)" />
+                            </p>
+                        </div>
+                        <div class="imgbox">
+                            <span>
+                              <img class="imgs" id="a3"
+                                src="https://mblogthumb-phinf.pstatic.net/20150819_100/iamundine_1439970779216WcILD_JPEG/%BA%B0%C0%CC_%BA%FB%B3%AA%B4%C2_%B9%E3.jpg?type=w2"
+                                alt="eccv16/starry_night.t7">
+                            </span>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;<input type="radio" class="radio" name="setstyle" id="a3" value="eccv16/starry_night.t7"
+                                onclick="getStyle(event)" /></p>
+                        </div>
+                        <div class="imgbox">
+                            <span>
+                              <img class="imgs" id="a4"
+                                src="https://raw.githubusercontent.com/KerasKorea/KEKOxTutorial/master/media/48_8.jpg"
+                                alt="eccv16/the_wave.t7">
+                            </span>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;
+                              <input type="radio" class="input_image" name="setstyle" id="a4" value="eccv16/the_wave.t7"
+                                onclick="getStyle(event)" />
+                            </p>
+                        </div>
+                        <div class="imgbox">
+                  
+                          <span>
+                            <img class="imgs" id="a5"
+                              src="http://1.bp.blogspot.com/-jNu7GnD9LZk/UhXwYCOgHRI/AAAAAAAAASs/bpZEy6_21Vg/s1600/%D0%9C%D0%BE%D0%B4%D0%B5%D1%80%D0%BD.jpg"
+                              alt="instance_norm/candy.t7">
+                          </span>
+                          <p>&nbsp; &nbsp; &nbsp; &nbsp;<input type="radio" class="input_image" name="setstyle" id="a5" value="instance_norm/candy.t7"
+                              onclick="getStyle(event)" />
+                          </p>
+                        </div>
+                        <div class="imgbox">
+                            <span>
+                              <img class="imgs" id="a6"
+                                src="https://i0.wp.com/bytefreaks.net/wp-content/uploads/2019/04/feathers-leaves-petals-sm.jpeg?w=400&ssl=1"
+                                alt="instance_norm/feathers.t7">
+                            </span>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;<input type="radio" class="input_image" name="setstyle" id="a6" value="instance_norm/feathers.t7"
+                                onclick="getStyle(event)" />
+                            </p>
+                        </div>
+                        <div class="imgbox">
+                            <span>
+                              <img class="imgs" id="a7" src="https://i.pinimg.com/originals/45/e1/c2/45e1c21835ef2bd9b0f4b1a9a0a6ad98.jpg"
+                                alt="instance_norm/la_muse.t7">
+                            </span>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;<input type="radio" class="input_image" name="setstyle" id="a7" value="instance_norm/la_muse.t7"
+                                onclick="getStyle(event)" />
+                            </p>
+                        </div>
+                        <div class="imgbox">
+                            <span>
+                              <img class="imgs" id="a8" src="https://jkoushik.me/neural-style/imgs/style/fulls/stained_glass.jpg"
+                                alt="instance_norm/mosaic.t7">
+                            </span>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;<input type="radio" class="input_image" name="setstyle" id="a8" value="instance_norm/mosaic.t7"
+                                onclick="getStyle(event)" />
+                            </p>
+                        </div>
+                        <div class="imgbox">
+                            <span>
+                              <img class="imgs" id="a9"
+                                src="http://uart.kr/web/upload/NNEditor/20200205/Vincent20Van20Gogh20-20Starry20Night20Over20the20Rhone-2.jpg"
+                                alt="instance_norm/starry_night.t7">
+                            </span>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;<input type="radio" class="input_image" name="setstyle" id="a9" value="instance_norm/starry_night.t7"
+                                onclick="getStyle(event)" />
+                            </p>
+                        </div>
+                        <div class="imgbox">
+                            <span>
+                              <img class="imgs" id="a10" src="https://dimg.donga.com/wps/NEWS/IMAGE/2021/02/23/105572552.4.jpg"
+                                alt="instance_norm/the_scream.t7">
+                            </span>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;<input type="radio" class="input_image" name="setstyle" id="a10" value="instance_norm/the_scream.t7"
+                                onclick="getStyle(event)" />
+                            </p>
+                        </div>
+                        <div class="imgbox">
+                            <span>
+                              <img class="imgs" id="a11"
+                                src="https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Francis_Picabia%2C_1913%2C_Udnie_%28Young_American_Girl%2C_The_Dance%29%2C_oil_on_canvas%2C_290_x_300_cm%2C_Mus%C3%A9e_National_d%E2%80%99Art_Moderne%2C_Centre_Georges_Pompidou%2C_Paris..jpg/600px-Francis_Picabia%2C_1913%2C_Udnie_%28Young_American_Girl%2C_The_Dance%29%2C_oil_on_canvas%2C_290_x_300_cm%2C_Mus%C3%A9e_National_d%E2%80%99Art_Moderne%2C_Centre_Georges_Pompidou%2C_Paris..jpg"
+                                alt="instance_norm/udnie.t7">
+                            </span>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;<input type="radio" class="input_image" name="setstyle" id="a11" value="instance_norm/udnie.t7"
+                                onclick="getStyle(event)" />
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" onclick="CreateArticle()">작성하기</button>
@@ -94,6 +203,25 @@
         if (!token) {
             window.location.replace(`${frontend_base_url}/login.html`);
         }
-    </script>
-  </body>
+    </script>    
+    <footer>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" onclick="MovePrevious()">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+              <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+              <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+              <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
+              <li class="page-item"><a class="page-link" onclick="MoveNext()">Next</a></li>
+            </ul>
+          </nav>
+        <label>
+            <input role="switch" type="checkbox" onclick="darkmode()" />
+            <span>다크모드로 전환</span>
+          </label>
+          <p>2022 A7 - team Lucky all rights reserved</p>
+    </footer>
+</body>
+
 </html>
+
