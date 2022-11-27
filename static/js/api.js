@@ -199,6 +199,48 @@ async function GetProfile(article_id) {
 }
 
 
+// 좋아요 등록/취소 //
+async function DoLike(article_id) {
+    const response = await fetch(`${backend_base_url}/articles/like/${article_id}/`, {
+        headers: {
+            "content-type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("access"),
+        },
+        method: "POST",
+    });
+    response_json = await response.json();
+
+    if (response.status == 200) {
+        window.location.replace(
+            `${frontend_base_url}/article_detail.html?id=${article_id}`
+        );
+    } else {
+        alert(response.status);
+    }
+}
+
+
+// 북마크 등록/취소 //
+async function DoBookmark(article_id) {
+    const response = await fetch(`${backend_base_url}/articles/bookmark/${article_id}/`, {
+        headers: {
+            "content-type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("access"),
+        },
+        method: "POST",
+    });
+    response_json = await response.json();
+
+    if (response.status == 200) {
+        window.location.replace(
+            `${frontend_base_url}/article_detail.html?id=${article_id}`
+        );
+    } else {
+        alert(response.status);
+    }
+}
+
+
 // 댓글 리스트 가져오기 //
 async function GetComment(article_id) {
     const response = await fetch(
@@ -261,7 +303,6 @@ async function loadUpdateComment(comment_id) {
         }
     );
     response_json = await response.json();
-    console.log(response_json);
 
     if (response.status == 200) {
         window.location.replace(

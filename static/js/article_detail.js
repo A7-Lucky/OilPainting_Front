@@ -32,11 +32,33 @@ async function loadArticle(article_id) {
     const bookmarks = document.getElementById("bookmarks");
     const created_at = document.getElementById("created_at");
 
+    const dolike = document.getElementById("dolike")
+    const dolike_button = document.createElement("button");
+    dolike_button.innerText = "❤️";
+    dolike_button.setAttribute("id", article.id);
+    dolike_button.setAttribute("class", "btn btn-outline-danger")
+    dolike_button.setAttribute(
+        "onclick",
+        "DoLike(this.id)"
+    );
+    dolike.appendChild(dolike_button);
+
+    const dobookmark = document.getElementById("dobookmark")
+    const dobookmark_button = document.createElement("button");
+    dobookmark_button.innerText = "🔖";
+    dobookmark_button.setAttribute("id", article.id);
+    dobookmark_button.setAttribute("class", "btn btn-outline-warning")
+    dobookmark_button.setAttribute(
+        "onclick",
+        "DoBookmark(this.id)"
+    );
+    dobookmark.appendChild(dobookmark_button);
+
     title.innerText = article.title;
     user.innerText = article.user;
     content.innerText = article.content;
-    likes.innerText = "❤️" + article.likes;
-    bookmarks.innerText = "🔖" + article.bookmarks;
+    likes.innerText = article.likes;
+    bookmarks.innerText = article.bookmarks;
     created_at.innerText = article.created_at;
 }
 loadArticle(article_id);

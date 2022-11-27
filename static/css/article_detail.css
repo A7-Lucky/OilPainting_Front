@@ -95,11 +95,19 @@ p {
 
 .likes_bookmarks {
     display: flex;
-    flex-direction: row;
+    flex-direction: row;   
 }
 
-.bookmarks {
-    margin-left: 50px;
+.dolike {
+    margin: 0 10px 10px 0;
+}
+
+.dobookmark {
+    margin: 0 10px 10px 50px;
+}
+
+.likes, .bookmarks {
+    margin-top: 5px;
 }
 
 .comment_input_box {
