@@ -316,3 +316,15 @@ async function getName() {
 function darkmode() {
   document.getElementById("body").classList.toggle("dark");
 }
+
+// 마이 북마크 가져오기
+async function loadGetMyBookmark() {
+    const response = await fetch(`${backend_base_url}/articles/mybookmark/`, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("access"),
+        },
+        method: "GET",
+      });
+      response_json = await response.json();
+      return response_json;
+}
