@@ -32,6 +32,7 @@ checkLogin()
 // 아티클 리스트 가져오기 (페이지네이션 적용)  //
 window.onload = async function loadArticleList(){
     articles = await getArticleList()
+    articles = articles['results']
     
     const article_list = document.getElementById("article_list")
 
