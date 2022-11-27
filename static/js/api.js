@@ -128,8 +128,8 @@ async function updateTokenPassword(formdata) {
 //index.html ------------------------------------------------------------------------->
 
 // 주소로 아티클 페이지받기 //
-const urlParams = new URLSearchParams(window.location.search);
-const page_id = urlParams.get("page");
+const pageurlParams = new URLSearchParams(window.location.search);
+const page_id = pageurlParams.get("page");
 
 
 // 아티클 리스트 보여주기 //
