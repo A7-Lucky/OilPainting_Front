@@ -48,7 +48,7 @@ async function handleSignup() {
     password: document.getElementById("password").value,
   };
 
-  const response = await fetch(`${backend_base_url}users/signup/`, {
+  const response = await fetch(`${backend_base_url}/users/signup/`, {
     headers: {
       "content-type": "application/json",
     },
@@ -57,9 +57,9 @@ async function handleSignup() {
   });
 
   response_json = await response.json();
-  if (response.status == 200) {
+  if (response.status == 201) {
     alert("가입 완료!");
-    window.location.replace(`${frontend_base_url}login.html`);
+    window.location.replace(`${frontend_base_url}/login.html`);
   } else {
     alert("이미 가입된 계정입니다!");
     window.location.reload();
