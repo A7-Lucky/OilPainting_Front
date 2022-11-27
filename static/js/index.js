@@ -18,17 +18,17 @@ window.onload = async function loadArticleList(){
     const article_list = document.getElementById("article_list")
 
     articles.forEach(article => {
-        const newuser = document.createElement("li")
+        // const newuser = document.createElement("li")
         const newimage = document.createElement("img")
 
         newimage.setAttribute("src", `${backend_base_url}/${article.image}`)
         newimage.setAttribute("id", article.id)
 
-        newuser.innerText = article.user
+        // newuser.innerText = article.user
 
         newimage.setAttribute("onclick", "ArticleDetail(this.id)")
 
-        article_list.appendChild(newuser)
+        // article_list.appendChild(newuser)
         article_list.appendChild(newimage)
     });
 }

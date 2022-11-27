@@ -39,7 +39,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="input-group mb-3">
-                            <input type="text" id="modal_comment" class="form-control" placeholder="Update Comment" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" id="modal_comment" class="form-control" placeholder="Update Comment"
+                                aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -56,17 +57,20 @@
             <div class="space">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">My</a>
+                        <a class="nav-link" id="username" href="#"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="profile.html">My</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-link" onclick="handleLogout()">Logout</button>
                     </li>
                 </ul>
             </div>
         </nav>
         <div class="article_area">
             <div class="article_box">
-                <h1 id="title"></h1>
+                <h3 id="title"></h3>
                 <hr />
                 <div class="user_info">
                     <p id="profile_img"></p>
@@ -101,10 +105,12 @@
                         </div>
                         <div class="comment_input_box">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="comment-input" placeholder="댓글을 입력해주세요!" required />
+                                <input type="text" class="form-control" id="comment-input" placeholder="댓글을 입력해주세요!"
+                                    required />
                                 <label for="floatingInput">댓글을 입력해주세요!</label>
                             </div>
-                            <button type="button" class="btn btn-secondary comment_input_button" onclick="CreateComment()">등록</button>
+                            <button type="button" class="btn btn-secondary comment_input_button"
+                                onclick="CreateComment()">등록</button>
                         </div>
                     </div>
                 </div>
@@ -118,9 +124,9 @@
     <script>
         // 인증된 유저만 페이지 접근 가능 //
         if (!token) {
-          window.location.replace(`${frontend_base_url}/login.html`);
+            window.location.replace(`${frontend_base_url}/login.html`);
         }
-      </script>
+    </script>
 </body>
 
 </html>

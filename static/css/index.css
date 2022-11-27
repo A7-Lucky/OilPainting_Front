@@ -8,6 +8,7 @@ body {
 nav.navbar {
     width: 100%;
     justify-content: space-between;
+    height: 50px;
 }
 
 a.navbar-brand {
@@ -15,32 +16,25 @@ a.navbar-brand {
     font-size: 30px;
 }
 
-nav.navbar {
-  width: 100%;
-  justify-content: space-between;
-  position: fixed;
-}
-
-a.navbar-brand {
-  margin: 0 20px;
-  font-size: 30px;
-}
-
-button.btn.btn-primary {
-  margin-right: 20px;
-}
-
 .nav-item {
-    margin-right: 50px;
-    font-size: 20px;
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+div.space {
+    display: flex;
+}
+
+.btn-link {
+    color: grey;
 }
 
 .article_area {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 100px auto;
-    width: 1500px;
+    margin: 30px auto;
+    width: 1000px;
 }
 
 button {
@@ -60,9 +54,9 @@ ol {
 }
 
 img {
-    margin: 10px 10px;
-    width: 500px;
-    height: 500px;
+    margin: 5px 5px;
+    width: 300px;
+    height: 300px;
 
     display: flex;
     flex-direction: column;
@@ -71,6 +65,7 @@ img {
 .article_box {
     display: flex;
     flex-direction: row;
+    margin: 30px;
 }
 
 .article_list {
@@ -79,9 +74,9 @@ img {
 }
 
 .create_article {
-    width: 200px;
-    height: 50px;
-    font-size: 20px;;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
 }
 
 .modal_content {

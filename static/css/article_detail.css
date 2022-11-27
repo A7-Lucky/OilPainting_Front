@@ -5,6 +5,7 @@ body {
 nav.navbar {
     width: 100%;
     justify-content: space-between;
+    height: 50px;
 }
 
 a.navbar-brand {
@@ -12,8 +13,17 @@ a.navbar-brand {
     font-size: 30px;
 }
 
+.nav-item {
+    margin-right: 10px;
+    font-size: 15px;
+}
+
 div.space {
     display: flex;
+}
+
+.btn-link {
+    color: grey;
 }
 
 input.form-control {
@@ -25,17 +35,12 @@ input.form-control {
     margin: 10px;
 }
 
-.nav-item {
-    margin-right: 50px;
-    font-size: 20px;
-}
-
 li {
     margin-bottom: 5px;
 }
 
 p {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .article_area {
@@ -75,9 +80,10 @@ p {
     align-items: center;
     margin: 50px;
     padding: 20px;
-    border: solid 3px rgb(244, 217, 186);
+    border: solid 2px rgb(201, 200, 199);
     border-radius: 10px;
-    width: 1500px;
+    width: 1000px;
+    background-color: lightyellow;
 }
 
 .update_button,

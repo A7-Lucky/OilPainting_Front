@@ -1,18 +1,32 @@
 body {
   height: 100vh;
   display: grid;
+  font-family: 'Jua', sans-serif;
   background-color: whitesmoke;
 }
 
 nav.navbar {
   width: 100%;
   justify-content: space-between;
-  position: fixed;
+  height: 50px;
 }
 
 a.navbar-brand {
   margin: 0 20px;
   font-size: 30px;
+}
+
+.nav-item {
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+div.space {
+  display: flex;
+}
+
+.btn-link {
+  color: grey;
 }
 
 button.btn.btn-primary {
