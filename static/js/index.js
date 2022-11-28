@@ -13,9 +13,14 @@ checkLogin();
 
 // 아티클 리스트 가져오기 (페이지네이션 적용)  //
 window.onload = async function loadArticleList() {
-  articles = await getArticleList();
-  articles = articles["results"];
+  viewset = await getArticleList();
+  // 아티클 받아오기 //
+  articles = viewset["results"];
+  // 페이지 수 가져오기 // 
+  pages = viewset['count']
+  pages = Math.ceil(Number(pages)/3)
 
+  // 아티클 생성하기 //
   const article_list = document.getElementById("article_list");
 
   articles.forEach((article) => {
@@ -39,6 +44,15 @@ window.onload = async function loadArticleList() {
     // article_list.appendChild(newuser)
     // article_list.appendChild(newtitle)
   });
+
+  // 페이지네이션 페이지 생성하기 //
+  for (let i = 1; i < pages+1; i++) {
+    let temp_html = `
+    <li class="page-item"><a class="page-link" href="?page=${i}">${i}</a></li>
+    `
+    
+    $('#pagination').append(temp_html)
+  }
 };
 
 // 아티클 생성 //
