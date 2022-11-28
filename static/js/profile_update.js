@@ -34,7 +34,7 @@ async function Unsignup() {
   if (email == name.email) {
     handleUnsignup()
     alert("회원 탈퇴 완료!")
-    window.location.replace(`${frontend_base_url}/signup.html`);
+    window.location.replace(`${frontend_base_url}/login.html`);
   } else {
     alert("이메일을 다시 입력해주세요.")
   }

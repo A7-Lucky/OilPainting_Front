@@ -294,14 +294,10 @@
     </div>
 
     <footer>
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" onclick="MovePrevious()">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
-          <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
-          <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
-          <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
-          <li class="page-item"><a class="page-link" onclick="MoveNext()">Next</a></li>
+      <nav aria-label="Page navigation example" >
+        <ul class="pagination" id="pagination" >
+          <li class="page-item"><a class="page-link" onclick="MovePrevious()"><</a></li>
+          <li class="page-item"><a class="page-link" onclick="MoveNext()">></a></li>
         </ul>
       </nav>
       <label>
