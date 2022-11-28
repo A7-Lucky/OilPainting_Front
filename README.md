@@ -155,17 +155,17 @@
     
     해결 : [setting.py](http://setting.py)에  AUTH_USER_MODEL = users.User을 적용하여 해결
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f283c8af-f35c-4bc6-a3f0-02e05c9d58f1/Untitled.png)
+    ![image](https://user-images.githubusercontent.com/113072964/204172422-f9aed9e2-c2e3-4c98-aaf3-d9e8279218c2.png)
     
 - 2022. 11. 26
     
     `NOT NULL constraint failed: articles_article.user_id` 에러
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f876bb4-d280-42e3-b645-a0663b17a57a/Untitled.png)
-    
+    ![image](https://user-images.githubusercontent.com/113072964/204172487-31fa65c9-52bc-48ca-b709-bf4e6da868bf.png)
+
     폼 데이터에 유저 id를 직접 넣었을시 적용되지 않는 문제
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fb65823b-5072-4967-ac70-438a9abf6100/Untitled.png)
+    ![image](https://user-images.githubusercontent.com/113072964/204172518-f6a8e191-d79b-42ea-9ec8-ccc28bf52c5a.png)
     
     아티클을 저장할때 (user=request.user)를 넣는 방법으로 해결
 
